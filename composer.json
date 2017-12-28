@@ -11,6 +11,7 @@
 		"slothsoft/core" : "*",
 		"slothsoft/dbms" : "*",
 		"slothsoft/sse" : "*",
+<<<<<<< HEAD
 		"php" : ">=7.0"
 	},
 	"require-dev" : {
@@ -22,3 +23,17 @@
 		}
 	}
 }
+=======
+		
+		"php": ">=7.0"
+    },
+	"require-dev": {
+		"phpunit/phpunit": ">=6.0"
+    },
+	"autoload": {
+        "psr-4": {
+            "Slothsoft\\Chat\\": "php/"
+        }
+    }
+}
+>>>>>>> branch 'master' of https://github.com/Faulo/slothsoft-chat.git
