@@ -13,6 +13,7 @@
     "require": {
 		"slothsoft/core" : "*",
 		"slothsoft/dbms" : "*",
+		"slothsoft/sse" : "*",
 		
 		"php": ">=7.0"
     },
