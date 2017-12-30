@@ -1,4 +1,4 @@
-Files and Resources and Hypertext
-=================================
+Chat Module
+===========
 
-A Farah module.
+A Farah module that renders a simple shoutbox.

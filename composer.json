@@ -1,6 +1,6 @@
 {
     "name": "slothsoft/chat",
-    "description": "",
+    "description": "A Farah module that renders a simple shoutbox.",
     "keywords": [],
     "license": "WTFPL",
     "authors": [
