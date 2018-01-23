@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module>
-	<fragment name="default">
-		<template name="default" />
-		<data name="fetch" />
-		<style name="default" />
-		<script name="Control" />
-		<struc name="/core/DOM" />
-		<struc name="/sse/script" />
-	</fragment>
-
-	<fragment name="archive">
-		<template name="archive" />
-		<data name="archive" />
-		<style name="default" />
-	</fragment>
+<module xmlns="http://schema.slothsoft.net/farah/module">
+	<assets>
+		<resource-directory name="data" path="data" type="application/x-php"/>
+		<resource-directory name="css" path="stylesheet" type="text/css"/>
+		<resource-directory name="js" path="script" type="application/javascript"/>
+		<resource-directory name="xsl" path="template" type="application/xslt+xml"/>
+	
+	
+		<fragment name="default">
+			<use-template ref="xsl/default" />
+			<use-data ref="data/fetch" />
+			<use-stylesheet ref="css/default" />
+			<use-script ref="js/Control" />
+			<include-fragment ref="//core/DOM" />
+			<include-fragment ref="//sse/script" />
+		</fragment>
+	
+		<fragment name="archive">
+			<use-template ref="xsl/archive" />
+			<use-data ref="data/archive" />
+			<use-stylesheet ref="css/default" />
+		</fragment>
+	</assets>
 </module>

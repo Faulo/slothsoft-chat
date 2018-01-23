@@ -3,9 +3,9 @@
 	xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
  
-	<xsl:template match="/data[*[@data-cms-name='fetch']]">
+	<xsl:template match="/*[*[@name='fetch']]">
 		
-		<xsl:for-each select="*[@data-cms-name='fetch']">
+		<xsl:for-each select="*[@name='fetch']">
 			<form data-chat-id="form" data-chat-last-id="{range/@last-id}" data-chat-database="{range/@db-table}">
 				<ul data-chat-id="list" class="messageLog">
 					<xsl:apply-templates select="range/p"/>
@@ -16,8 +16,8 @@
 		
 	</xsl:template>
 	
-	<xsl:template match="/data[range]">
-		<xsl:apply-templates select="range/p"/>
+	<xsl:template match="range">
+		<xsl:apply-templates select="p"/>
 	</xsl:template>
 	
 	<xsl:template match="p">
