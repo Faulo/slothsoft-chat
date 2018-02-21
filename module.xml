@@ -1,25 +1,33 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="http://schema.slothsoft.net/farah/module">
-	<assets>
-		<resource-directory name="data" path="data" type="application/x-php"/>
-		<resource-directory name="css" path="stylesheet" type="text/css"/>
-		<resource-directory name="js" path="script" type="application/javascript"/>
-		<resource-directory name="xsl" path="template" type="application/xslt+xml"/>
-	
-	
-		<fragment name="default">
-			<use-template ref="xsl/default" />
-			<use-data ref="data/fetch" />
-			<use-stylesheet ref="css/default" />
-			<use-script ref="js/Control" />
-			<include-fragment ref="//core/DOM" />
-			<include-fragment ref="//sse/script" />
-		</fragment>
-	
-		<fragment name="archive">
-			<use-template ref="xsl/archive" />
-			<use-data ref="data/archive" />
-			<use-stylesheet ref="css/default" />
-		</fragment>
-	</assets>
+<?xml version="1.0"?>
+<module xmlns="http://schema.slothsoft.net/farah/module" xmlns:sfm="http://schema.slothsoft.net/farah/module">
+  <!--
+Farah Module Manifest
+
+Module: chat
+Vendor: slothsoft
+Farah ID: farah://slothsoft@chat
+Composer ID: slothsoft/chat
+
+Homepage: http://farah.slothsoft.net/modules/chat
+Packagist: https://packagist.org/packages/slothsoft/chat
+GitHub: https://github.com/Faulo/slothsoft-chat
+
+Llo
+-->
+  <default-configuration/>
+  <assets>
+    <fragment name="default">
+      <use-template ref="xsl/default"/>
+      <use-document ref="data/fetch"/>
+      <use-stylesheet ref="css/default"/>
+      <use-script ref="js/Control"/>
+      <include-fragment ref="//core/DOM"/>
+      <include-fragment ref="//sse/script"/>
+    </fragment>
+    <fragment name="archive">
+      <use-template ref="xsl/archive"/>
+      <use-document ref="data/archive"/>
+      <use-stylesheet ref="css/default"/>
+    </fragment>
+  </assets>
 </module>

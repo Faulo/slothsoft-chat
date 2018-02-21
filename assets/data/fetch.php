@@ -4,8 +4,11 @@ namespace Slothsoft\Farah;
 use Slothsoft\Chat\Model;
 use Slothsoft\DBMS\DatabaseException;
 use DOMDocument;
+use Slothsoft\Farah\Module\Assets\AssetInterface;
 
-return function() {
+return function(AssetInterface $asset) {
+    $args = $asset->getArguments();
+    
     $httpRequest = Kernel::getInstance()->getRequest();
     
     $dbName = 'cms';
@@ -15,6 +18,14 @@ return function() {
         $dbName = 'chat';
         $tableName = $name;
     }
+    
+    //TOOD: enable mysql
+    $dataDoc = new DOMDocument();
+    $retNode = $dataDoc->createElement('range');
+    $retNode->setAttribute('db-name', $dbName);
+    $retNode->setAttribute('db-table', $tableName);
+    $dataDoc->appendChild($retNode);
+    return $dataDoc;
     
     $chat = new Model();
     try {

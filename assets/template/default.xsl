@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
 	xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:sfm="http://schema.slothsoft.net/farah/module">
  
-	<xsl:template match="/*[*[@name='fetch']]">
-		
+	<xsl:template match="/*">
 		<xsl:for-each select="*[@name='fetch']">
 			<form data-chat-id="form" data-chat-last-id="{range/@last-id}" data-chat-database="{range/@db-table}">
 				<ul data-chat-id="list" class="messageLog">
@@ -13,7 +13,6 @@
 				<input type="text" data-chat-id="input" autocomplete="off" disabled="disabled" class="myParagraph"/>
 			</form>
 		</xsl:for-each>
-		
 	</xsl:template>
 	
 	<xsl:template match="range">

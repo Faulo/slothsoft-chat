@@ -9,13 +9,13 @@ function ChatControl() {
 	this.lastId = 0;
 }
 //static
-ChatControl.sseURI = "/getData.php/chat/sse";
+ChatControl.sseURI = "/getAsset.php/chat/data/sse";
 ChatControl.load = function(eve) {
 	try {
 		let nodeList = document.querySelectorAll("*[data-chat-id='form']");
 		if (nodeList.length) {
 			DOMHelper.loadDocument(
-				"/getTemplate.php/chat/default",
+				"/getAsset.php/chat/xsl/default",
 				(templateDoc) => {
 					if (templateDoc) {
 						for (let i = 0; i < nodeList.length; i++) {
