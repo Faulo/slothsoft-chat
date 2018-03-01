@@ -28,8 +28,8 @@ Llo
       <use-document ref="data/fetch"/>
       <use-stylesheet ref="css/default"/>
       <use-script ref="js/Control"/>
-      <include-fragment ref="//core/DOM"/>
-      <include-fragment ref="//sse/script"/>
+      <import ref="//core/DOM"/>
+      <import ref="//sse/script"/>
     </fragment>
     <fragment name="archive">
       <use-template ref="xsl/archive"/>
