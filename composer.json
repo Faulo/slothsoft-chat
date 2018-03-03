@@ -1,30 +1,30 @@
 {
-    "name": "slothsoft\/chat",
-    "description": "A Farah module that renders a simple shoutbox.",
-    "keywords": [],
-    "license": "WTFPL",
-    "authors": [
-        {
-            "name": "Daniel Schulz",
-            "email": "info.slothsoft@gmail.com"
-        }
-    ],
-    "type": "library",
-    "require": {
-        "php": ">=7.0",
-        "slothsoft\/core": "*",
-        "slothsoft\/dbms": "*",
-        "slothsoft\/sse": "*"
-    },
-    "require-dev": {
-        "phpunit\/phpunit": ">=6.0",
-        "slothsoft\/core": "dev-master",
-        "slothsoft\/dbms": "dev-master",
-        "slothsoft\/sse": "dev-master"
-    },
-    "autoload": {
-        "psr-4": {
-            "Slothsoft\\Chat\\": "src\/"
-        }
-    }
+	"name" : "slothsoft/chat",
+	"description" : "A Farah module that renders a simple shoutbox.",
+	"license" : "WTFPL",
+	"authors" : [{
+			"name" : "Daniel Schulz",
+			"email" : "info.slothsoft@gmail.com"
+		}
+	],
+	"type" : "library",
+	"require" : {
+		"php" : ">=7.0",
+		"slothsoft/core" : "*",
+		"slothsoft/dbms" : "*",
+		"slothsoft/sse" : "*",
+		"slothsoft/minecraft" : "*"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : ">=6.0",
+		"slothsoft/core" : "dev-master",
+		"slothsoft/dbms" : "dev-master",
+		"slothsoft/sse" : "dev-master",
+		"slothsoft/minecraft" : "dev-master"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"Slothsoft\\Chat\\" : "src/"
+		}
+	}
 }

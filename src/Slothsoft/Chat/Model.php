@@ -57,9 +57,9 @@ class Model
                 $this->install();
             }
         } catch (Exception $e) {
-			$this->dbmsTable = null;
-			throw $e;
-		}
+            $this->dbmsTable = null;
+            throw $e;
+        }
     }
 
     public function insert($message, $time, $ip)
