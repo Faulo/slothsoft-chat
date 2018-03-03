@@ -144,17 +144,17 @@
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/slothsoft/core/php">
+	<buildpathentry kind="src" path="vendor/slothsoft/core/src/Slothsoft/Core">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/slothsoft/dbms/php">
+	<buildpathentry kind="src" path="vendor/slothsoft/dbms/src/Slothsoft/DBMS">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
 	</buildpathentry>
-	<buildpathentry kind="src" path="vendor/slothsoft/sse/php">
+	<buildpathentry kind="src" path="vendor/slothsoft/sse/src/Slothsoft/SSE">
 		<attributes>
 			<attribute name="composer" value="vendor"/>
 		</attributes>
