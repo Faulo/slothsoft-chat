@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Slothsoft\\Chat\\": "src\/Slothsoft\/Chat\/"
+            "Slothsoft\\Chat\\": "src\/"
         }
     }
 }
