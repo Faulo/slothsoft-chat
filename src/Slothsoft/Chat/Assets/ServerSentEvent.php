@@ -8,7 +8,9 @@ use Slothsoft\Farah\Module\Results\ResultInterface;
 
 class ServerSentEvent extends AssetImplementation
 {
-    protected function loadResult(FarahUrl $url) : ResultInterface {
+
+    protected function loadResult(FarahUrl $url): ResultInterface
+    {
         return new NullResult($url);
     }
 }
