@@ -29,15 +29,15 @@ Llo
     <fragment name="default">
       <use-template ref="xsl/default"/>
       <use-document ref="data/fetch"/>
-      <use-stylesheet ref="css/default"/>
-      <use-script ref="js/Control"/>
+      <link-stylesheet ref="css/default"/>
+      <link-script ref="js/Control"/>
       <import ref="//core/DOM"/>
       <import ref="//sse/script"/>
     </fragment>
     <fragment name="archive">
       <use-template ref="xsl/archive"/>
       <use-document ref="data/archive"/>
-      <use-stylesheet ref="css/default"/>
+      <link-stylesheet ref="css/default"/>
     </fragment>
   </assets>
 </module>

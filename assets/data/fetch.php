@@ -32,7 +32,7 @@ return function(FarahUrl $url) {
         }
         $duration = (int) $args->get('chat-duration', 10 * 365);
         $end = time();
-        $start = $end - $duration * TIME_DAY;
+        $start = $end - $duration * Seconds::DAY;
         
         $dataDoc->appendChild($chat->getRangeNode($start, $end, $dataDoc));
     }

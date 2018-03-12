@@ -33,9 +33,9 @@ class Model
 
     protected $dbTable;
 
-    protected $dateDisplay = DATE_DATETIME;
+    protected $dateDisplay;
 
-    protected $dateSystem = DATE_ATOM;
+    protected $dateSystem;
 
     protected $colorCache;
 
@@ -44,6 +44,8 @@ class Model
     public function __construct()
     {
         $this->colorCache = [];
+        $this->dateDisplay = DateTimeFormatter::FORMAT_DATETIME;
+        $this->dateSystem = DateTimeFormatter::FORMAT_ATOM;
     }
 
     public function init($dbName, $dbTable)
