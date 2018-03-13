@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 /***********************************************************************
  * Slothsoft\Chat\SSEServer v1.01 26.10.2017 © Daniel Schulz
  * 
