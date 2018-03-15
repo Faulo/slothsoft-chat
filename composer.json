@@ -26,6 +26,9 @@
         "slothsoft\/sse": "dev-master"
     },
     "autoload": {
+        "files": [
+            "src\/registerModule.php"
+        ],
         "psr-0": {
             "Slothsoft\\Chat\\": "src\/"
         }
