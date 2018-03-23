@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <assets xmlns="http://schema.slothsoft.net/farah/module">
-    <container name="data">
+    <fragment name="data">
     	<custom-asset name="fetch" class="Slothsoft\Chat\Assets\Fetch"/>
     	<custom-asset name="sse" class="Slothsoft\Chat\Assets\ServerSentEvent"/>
-    </container>
+    </fragment>
     <resource-directory name="css" path="stylesheet" type="text/css"/>
     <resource-directory name="js" path="script" type="application/javascript"/>
     <resource-directory name="xsl" path="template" type="application/xslt+xml"/>
