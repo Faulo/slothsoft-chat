@@ -3,13 +3,12 @@
     <fragment name="data">
     	<custom-asset name="fetch" class="Slothsoft\Chat\Assets\Fetch"/>
     	<custom-asset name="sse" class="Slothsoft\Chat\Assets\ServerSentEvent"/>
+    	<fragment name="archive"/>
     </fragment>
     <resource-directory name="css" path="stylesheet" type="text/css"/>
     <resource-directory name="js" path="script" type="application/javascript"/>
     <resource-directory name="xsl" path="template" type="application/xslt+xml"/>
     <resource-directory name="dictionary" path="dictionary" type="application/xml"/>
-    <resource-directory name="pages" path="pages" type="application/xml"/>
-    <directory name="static"/>
     <fragment name="default">
       <use-template ref="xsl/default"/>
       <use-document ref="data/fetch"/>
