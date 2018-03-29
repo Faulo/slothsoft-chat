@@ -14,7 +14,7 @@
       <use-document ref="data/fetch"/>
       <link-stylesheet ref="css/default"/>
       <link-script ref="js/Control"/>
-      <import ref="//core/DOM"/>
+      <import ref="//core/imports/DOM"/>
       <import ref="//sse/script"/>
     </fragment>
     <fragment name="archive">
