@@ -15,7 +15,7 @@
       <link-stylesheet ref="css/default"/>
       <link-script ref="js/Control"/>
       <import ref="//core/imports/DOM"/>
-      <import ref="//sse/script"/>
+      <import ref="//sse/imports/client"/>
     </fragment>
     <fragment name="archive">
       <use-template ref="xsl/archive"/>
