@@ -14,7 +14,7 @@ namespace Slothsoft\Chat;
 use Slothsoft\Core\RCon;
 use Slothsoft\Core\Calendar\DateTimeFormatter;
 use Slothsoft\Core\DBMS\Manager;
-use Slothsoft\Minecraft\Log;
+use Slothsoft\Chat\MinecraftLog as Log;
 use DOMDocument;
 use Exception;
 

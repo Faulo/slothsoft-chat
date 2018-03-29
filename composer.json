@@ -1,41 +1,39 @@
 {
-    "name": "slothsoft\/chat",
-    "description": "A Farah module that renders a simple shoutbox.",
-    "license": "WTFPL",
-    "authors": [
-        {
-            "name": "Daniel Schulz",
-            "email": "info.slothsoft@gmail.com"
-        }
-    ],
-    "type": "library",
-    "require": {
-        "php": ">=7.0",
-        "slothsoft\/core": "*",
-        "slothsoft\/farah": "*",
-        "slothsoft\/sse": "*",
-        "slothsoft\/minecraft": "*"
-    },
-    "require-dev": {
-        "phpunit\/phpunit": ">=6.0",
-        "slothsoft\/amber": "dev-master",
-        "slothsoft\/core": "dev-master",
-        "slothsoft\/dragonage": "dev-master",
-        "slothsoft\/farah": "dev-master",
-        "slothsoft\/lang": "dev-master",
-        "slothsoft\/minecraft": "dev-master",
-        "slothsoft\/savegame": "dev-master",
-        "slothsoft\/slothsoft": "dev-master",
-        "slothsoft\/sse": "dev-master",
-        "slothsoft\/talesof": "dev-master",
-        "slothsoft\/w3c": "dev-master"
-    },
-    "autoload": {
-        "files": [
-            "src\/registerModule.php"
-        ],
-        "psr-0": {
-            "Slothsoft\\Chat\\": "src\/"
-        }
-    }
+	"name" : "slothsoft/chat",
+	"description" : "A Farah module that renders a simple shoutbox.",
+	"license" : "WTFPL",
+	"authors" : [{
+			"name" : "Daniel Schulz",
+			"email" : "info.slothsoft@gmail.com"
+		}
+	],
+	"type" : "library",
+	"require" : {
+		"php" : ">=7.0",
+		"slothsoft/core" : "*",
+		"slothsoft/farah" : "*",
+		"slothsoft/sse" : "*"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : ">=6.0",
+		"slothsoft/amber" : "dev-master",
+		"slothsoft/core" : "dev-master",
+		"slothsoft/dragonage" : "dev-master",
+		"slothsoft/farah" : "dev-master",
+		"slothsoft/lang" : "dev-master",
+		"slothsoft/minecraft" : "dev-master",
+		"slothsoft/savegame" : "dev-master",
+		"slothsoft/slothsoft" : "dev-master",
+		"slothsoft/sse" : "dev-master",
+		"slothsoft/talesof" : "dev-master",
+		"slothsoft/w3c" : "dev-master"
+	},
+	"autoload" : {
+		"files" : [
+			"C:\\Webserver\\workspace\\slothsoft-chat\\src\\registerModule.php"
+		],
+		"psr-0" : {
+			"Slothsoft\\Chat\\" : "src/"
+		}
+	}
 }

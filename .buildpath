@@ -2,7 +2,6 @@
 <buildpath>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/slothsoft-core"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/slothsoft-farah"/>
-	<buildpathentry combineaccessrules="false" kind="prj" path="/slothsoft-minecraft"/>
 	<buildpathentry combineaccessrules="false" kind="prj" path="/slothsoft-sse"/>
 	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/COM"/>
 	<buildpathentry kind="con" path="org.eclipse.dltk.USER_LIBRARY/DS"/>
