@@ -30,10 +30,13 @@
 	},
 	"autoload" : {
 		"files" : [
-			"C:\\Webserver\\workspace\\slothsoft-chat\\src\\registerModule.php"
+			"src/registerModule.php"
 		],
 		"psr-0" : {
 			"Slothsoft\\Chat\\" : "src/"
 		}
-	}
+	},
+	"keywords" : [
+		"farah-app"
+	]
 }
