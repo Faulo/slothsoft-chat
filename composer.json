@@ -16,7 +16,6 @@
         "slothsoft\/farah": "*",
         "slothsoft\/lang": "*",
         "slothsoft\/minecraft": "*",
-        "slothsoft\/pt": "*",
         "slothsoft\/sse": "*",
         "slothsoft\/w3c": "*"
     },
@@ -27,7 +26,6 @@
         "slothsoft\/farah": "dev-master",
         "slothsoft\/lang": "dev-master",
         "slothsoft\/minecraft": "dev-master",
-        "slothsoft\/pt": "dev-master",
         "slothsoft\/sse": "dev-master",
         "slothsoft\/w3c": "dev-master"
     },
