@@ -4,7 +4,7 @@ namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Chat\Model;
 use Slothsoft\Core\Calendar\Seconds;
-use Slothsoft\DBMS\DatabaseException;
+use Slothsoft\Core\DBMS\DatabaseException;
 use Slothsoft\Farah\Module\FarahUrl\FarahUrl;
 use Slothsoft\Farah\Module\Node\Asset\AssetImplementation;
 use Slothsoft\Farah\Module\Results\DOMDocumentResult;

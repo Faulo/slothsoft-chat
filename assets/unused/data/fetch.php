@@ -1,7 +1,7 @@
 <?php
 namespace Slothsoft\Chat;
 
-use Slothsoft\DBMS\DatabaseException;
+use Slothsoft\Core\DBMS\DatabaseException;
 use Slothsoft\Farah\Module\FarahUrl\FarahUrl;
 use DOMDocument;
 
