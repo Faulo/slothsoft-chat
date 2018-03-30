@@ -14,8 +14,8 @@
       <use-document ref="data/fetch"/>
       <link-stylesheet ref="css/default"/>
       <link-script ref="js/Control"/>
-      <import ref="//core/imports/DOM"/>
-      <import ref="//sse/imports/client"/>
+      <import ref="//core/api/DOM"/>
+      <import ref="//sse/api/client"/>
     </fragment>
     <fragment name="archive">
       <use-template ref="xsl/archive"/>
