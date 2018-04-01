@@ -1,14 +1,16 @@
 <?php
 declare(strict_types = 1);
-/***********************************************************************
+/**
+ * *********************************************************************
  * Slothsoft\Chat\SSEServer v1.01 26.10.2017 © Daniel Schulz
- * 
- * 	Changelog:
- *		v1.01 26.10.2017
- *			refactoring
- *		v1.00 29.05.2014
- *			public function __construct($serverName)
- ***********************************************************************/
+ *
+ * Changelog:
+ * v1.01 26.10.2017
+ * refactoring
+ * v1.00 29.05.2014
+ * public function __construct($serverName)
+ * *********************************************************************
+ */
 namespace Slothsoft\Chat;
 
 use Slothsoft\SSE\Server;
