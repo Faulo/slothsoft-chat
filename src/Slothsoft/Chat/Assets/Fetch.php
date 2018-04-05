@@ -28,7 +28,7 @@ class Fetch extends AssetImplementation
         
         $dataDoc = new DOMDocument();
         // TOOD: enable mysql+chat
-        if ($chatDisabled = true) {
+        if ($chatDisabled = false) {
             $retNode = $dataDoc->createElement('range');
             $retNode->setAttribute('db-name', $dbName);
             $retNode->setAttribute('db-table', $tableName);
@@ -38,7 +38,7 @@ class Fetch extends AssetImplementation
             try {
                 $chat->init($dbName, $tableName);
             } catch (DatabaseException $e) {}
-            $duration = (int) $args->get('chat-duration', 10 * 365);
+            $duration = (int) $args->get('chat-duration', 1);
             $end = time();
             $start = $end - $duration * Seconds::DAY;
             
