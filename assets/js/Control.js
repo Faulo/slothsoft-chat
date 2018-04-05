@@ -15,7 +15,7 @@ ChatControl.load = function(eve) {
 		let nodeList = document.querySelectorAll("*[data-chat-id='form']");
 		if (nodeList.length) {
 			DOMHelper.loadDocument(
-				"/getAsset.php/chat/xsl/default",
+				"/getAsset.php/chat/xsl/form",
 				(templateDoc) => {
 					if (templateDoc) {
 						for (let i = 0; i < nodeList.length; i++) {
