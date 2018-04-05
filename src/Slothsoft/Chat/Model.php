@@ -169,8 +169,8 @@ class Model
             }
             $color = $arr['ip'] ? $arr['ip'] : $arr['speaker'];
             $send = [
-                'time-string' => date($this->dateDisplay, $arr['time']),
-                'time-utc' => date($this->dateSystem, $arr['time']),
+                'time-string' => date($this->dateDisplay, (int) $arr['time']),
+                'time-utc' => date($this->dateSystem, (int) $arr['time']),
                 'color' => $this->calcColor($color),
                 'client' => $arr['ip']
             ];
