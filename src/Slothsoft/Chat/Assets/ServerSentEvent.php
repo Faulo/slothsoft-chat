@@ -2,17 +2,17 @@
 declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
-use Slothsoft\Farah\Module\FarahUrl\FarahUrl;
-use Slothsoft\Farah\Module\Node\Asset\AssetImplementation;
-use Slothsoft\Farah\Module\Results\NullResult;
-use Slothsoft\Farah\Module\Results\ResultInterface;
+use Slothsoft\Chat\Executables\ChatExecutableCreator;
+use Slothsoft\Farah\Module\Executables\ExecutableInterface;
+use Slothsoft\Farah\Module\FarahUrl\FarahUrlArguments;
+use Slothsoft\Farah\Module\Node\Asset\AssetBase;
 
-class ServerSentEvent extends AssetImplementation
+class ServerSentEvent extends AssetBase
 {
-
-    protected function loadResult(FarahUrl $url): ResultInterface
+    protected function loadExecutable(FarahUrlArguments $args): ExecutableInterface
     {
-        return new NullResult($url);
+        $creator = new ChatExecutableCreator($this, $args);
+        return $creator->createNullExecutable();
     }
 }
 

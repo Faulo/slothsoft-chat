@@ -2,49 +2,35 @@
 declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
-use Slothsoft\Chat\Model;
-use Slothsoft\Core\Calendar\Seconds;
-use Slothsoft\Core\DBMS\DatabaseException;
-use Slothsoft\Farah\Module\FarahUrl\FarahUrl;
-use Slothsoft\Farah\Module\Node\Asset\AssetImplementation;
-use Slothsoft\Farah\Module\Results\DOMDocumentResult;
-use Slothsoft\Farah\Module\Results\ResultInterface;
-use DOMDocument;
+use Slothsoft\Chat\Executables\ChatExecutableCreator;
+use Slothsoft\Farah\Module\Executables\ExecutableInterface;
+use Slothsoft\Farah\Module\FarahUrl\FarahUrlArguments;
+use Slothsoft\Farah\Module\Node\Asset\AssetBase;
+use Slothsoft\Farah\Module\ParameterFilters\MapFilter;
+use Slothsoft\Farah\Module\ParameterFilters\ParameterFilterInterface;
 
-class Fetch extends AssetImplementation
+class Fetch extends AssetBase
 {
-
-    protected function loadResult(FarahUrl $url): ResultInterface
+    protected function loadParameterFilter(): ParameterFilterInterface
     {
-        $args = $url->getArguments();
-        
-        $dbName = 'cms';
-        $tableName = 'minecraft_log';
-        
-        if ($name = $args->get('chat-database') and $name !== $tableName) {
-            $dbName = 'chat';
-            $tableName = $name;
-        }
-        
-        $dataDoc = new DOMDocument();
-        // TOOD: enable mysql+chat
-        if ($chatDisabled = false) {
-            $retNode = $dataDoc->createElement('range');
-            $retNode->setAttribute('db-name', $dbName);
-            $retNode->setAttribute('db-table', $tableName);
-            $dataDoc->appendChild($retNode);
+        return new MapFilter([
+            'chat-database' => 'minecraft_log',
+            'chat-duration' => 1,
+        ]);
+    }
+
+    protected function loadExecutable(FarahUrlArguments $args): ExecutableInterface
+    {
+        $tableName = $args->get('chat-database');
+        if ($tableName === 'minecraft_log') {
+            $dbName = 'cms';
         } else {
-            $chat = new Model();
-            try {
-                $chat->init($dbName, $tableName);
-            } catch (DatabaseException $e) {}
-            $duration = (int) $args->get('chat-duration', 1);
-            $end = time();
-            $start = $end - $duration * Seconds::DAY;
-            
-            $dataDoc->appendChild($chat->getRangeNode($start, $end, $dataDoc));
+            $dbName = 'chat';
         }
-        return new DOMDocumentResult($url, $dataDoc);
+        $duration = (int) $args->get('chat-duration');
+        
+        $creator = new ChatExecutableCreator($this, $args);
+        return $creator->createFetch($dbName, $tableName, $duration);
     }
 }
 
