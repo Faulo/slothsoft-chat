@@ -14,24 +14,21 @@ ChatControl.load = function(eve) {
 	try {
 		let nodeList = document.querySelectorAll("*[data-chat-id='form']");
 		if (nodeList.length) {
-			DOMHelper.loadDocument(
-				"/getAsset.php/chat/xsl/form",
-				(templateDoc) => {
-					if (templateDoc) {
-						for (let i = 0; i < nodeList.length; i++) {
-							let node = nodeList[i];
-							try {
-								if (node.getBoundingClientRect().height) {
-									let chat = new ChatControl();
-									chat.init(node, templateDoc, false);
-								}
-							} catch(e) {
-								console.log(e);
+			DOMHelper.loadDocument("/getAsset.php/chat/xsl/form")
+				.then((templateDoc) => {
+					for (let i = 0; i < nodeList.length; i++) {
+						let node = nodeList[i];
+						try {
+							if (node.getBoundingClientRect().height) {
+								let chat = new ChatControl();
+								chat.init(node, templateDoc, false);
 							}
+						} catch(e) {
+							console.log(e);
 						}
 					}
-				}
-			);
+					return templateDoc;
+				});
 		}
 	} catch(e) {
 		console.log(e);
@@ -49,9 +46,8 @@ ChatControl.events = {
 		//console.log("%o", eve);
 		try {
 			if (eve.data) {
-				if (doc = DOM.loadXML(eve.data)) {
-					this.sseClient._chat.append(doc);
-				}
+				DOMHelper.parse(eve.data)
+					.then(this.sseClient._chat.append);
 			}
 		} catch(e) {
 			console.log("%o", e);
