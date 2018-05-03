@@ -7,7 +7,7 @@ use Slothsoft\Farah\Module\Executables\ExecutableBase;
 use Slothsoft\Farah\Module\FarahUrl\FarahUrlStreamIdentifier;
 use Slothsoft\Farah\Module\Results\ResultCreator;
 
-class Fetch extends ExecutableBase
+class SSE extends ExecutableBase
 {
     private $server;
     public function __construct(SSEServer $server) {
