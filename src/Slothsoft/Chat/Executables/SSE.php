@@ -5,8 +5,9 @@ namespace Slothsoft\Chat\Executables;
 use Slothsoft\Chat\SSEServer;
 use Slothsoft\Farah\Module\Executables\ExecutableBase;
 use Slothsoft\Farah\Module\FarahUrl\FarahUrlStreamIdentifier;
-use Slothsoft\Farah\Module\Results\ResultCreator;
 use Slothsoft\Farah\Module\Results\ResultInterface;
+use Slothsoft\SSE\EventGenerator;
+use Slothsoft\SSE\Results\SSEResultCreator;
 
 class SSE extends ExecutableBase
 {
@@ -16,8 +17,8 @@ class SSE extends ExecutableBase
     }
     protected function loadResult(FarahUrlStreamIdentifier $type) : ResultInterface
     {
-        $creator = new ResultCreator($this, $type);
-        return $creator->createHttpStreamResult($this->server->getStream());
+        $creator = new SSEResultCreator($this, $type);
+        return $creator->createEventResult(new EventGenerator($this->server));
     }
 }
 

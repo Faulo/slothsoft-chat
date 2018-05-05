@@ -18,32 +18,33 @@ use Slothsoft\SSE\Server;
 class SSEServer extends Server
 {
 
-    protected $model;
+    private $model;
 
-    public function __construct($tableName, $dbName)
+    public function __construct(string $tableName, string $dbName, Model $model)
     {
-        $this->model = new Model();
-        $this->model->init($dbName, $tableName);
-        
         parent::__construct($tableName, $dbName);
+        
+        $this->model = $model;
     }
-
-    protected function install()
-    {}
 
     public function dispatchEvent($type, $data, $time = null, $ip = null)
     {
         return $this->model->insert($data, $time, $ip);
     }
 
-    public function fetchNewEvents($lastId)
+    public function fetchNewEvents($lastId) : array
     {
         if ($ret = $this->model->getMessageList($lastId)) {
-            $ret = [
-                $this->_parseEventList($ret)
+            return $this->_parseEventList($ret);
+        } else {
+            return [
+//                 [
+//                     'id' => 1,
+//                     'type' => 'message',
+//                     'data' => '<xml/>',
+//                 ]
             ];
         }
-        return $ret;
     }
 
     public function fetchLastEvent()

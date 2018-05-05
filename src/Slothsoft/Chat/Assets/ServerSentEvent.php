@@ -2,6 +2,7 @@
 declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
+use Slothsoft\Chat\Model;
 use Slothsoft\Chat\SSEServer;
 use Slothsoft\Chat\Executables\ChatExecutableCreator;
 use Slothsoft\Core\DBMS\DatabaseException;
@@ -33,14 +34,20 @@ class ServerSentEvent extends AssetBase
         }
         $lastId = (int) $args->get('lastId');
         
-        $creator = new ChatExecutableCreator($this, $args);
+        $chat = new Model($dbName, $tableName);
         try {
-            $sse = new SSEServer($tableName, $dbName);
-            $sse->init($lastId);
-            return $creator->createSSE($sse);
-        } catch(DatabaseException $e) {
-            return $creator->createNullExecutable();
+            $chat->init();
+        } catch (DatabaseException $e) {
         }
+        
+        $sse = new SSEServer($tableName, $dbName, $chat);
+        try {
+            $sse->init($lastId);
+        } catch(DatabaseException $e) {
+        }
+        
+        $creator = new ChatExecutableCreator($this, $args);
+        return $creator->createSSE($sse);
     }
 }
 

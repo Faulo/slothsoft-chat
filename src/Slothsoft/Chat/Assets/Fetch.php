@@ -2,7 +2,9 @@
 declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
+use Slothsoft\Chat\Model;
 use Slothsoft\Chat\Executables\ChatExecutableCreator;
+use Slothsoft\Core\DBMS\DatabaseException;
 use Slothsoft\Farah\Module\Executables\ExecutableInterface;
 use Slothsoft\Farah\Module\FarahUrl\FarahUrlArguments;
 use Slothsoft\Farah\Module\Node\Asset\AssetBase;
@@ -29,8 +31,14 @@ class Fetch extends AssetBase
         }
         $duration = (int) $args->get('chat-duration');
         
+        $chat = new Model($dbName, $tableName);
+        try {
+            $chat->init();
+        } catch (DatabaseException $e) {
+        }
+        
         $creator = new ChatExecutableCreator($this, $args);
-        return $creator->createFetch($dbName, $tableName, $duration);
+        return $creator->createFetch($chat, $duration);
     }
 }
 

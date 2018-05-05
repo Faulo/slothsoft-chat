@@ -45,19 +45,20 @@ class Model
 
     protected $isMinecraft;
 
-    public function __construct()
+    public function __construct(string $dbName, string $dbTable)
     {
         $this->colorCache = [];
         $this->dateDisplay = DateTimeFormatter::FORMAT_DATETIME;
         $this->dateSystem = DateTimeFormatter::FORMAT_ATOM;
+        
+        $this->dbName = $dbName;
+        $this->dbTable = $dbTable;
     }
 
-    public function init($dbName, $dbTable)
+    public function init()
     {
         try {
-            $this->dbmsTable = Manager::getTable($dbName, $dbTable);
-            $this->dbName = $dbName;
-            $this->dbTable = $dbTable;
+            $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
             $this->isMinecraft = $this->dbTable === 'minecraft_log';
             if (! $this->dbmsTable->tableExists()) {
                 $this->install();
@@ -93,6 +94,9 @@ class Model
 
     public function getMessageList($lastId)
     {
+        if (!$this->dbmsTable) {
+            return [];
+        }
         static $messageTypes = null;
         if (! $messageTypes) {
             $messageTypes['chat'] = Log::$messageTypes['chat'];

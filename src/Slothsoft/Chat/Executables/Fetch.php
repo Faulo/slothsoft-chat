@@ -4,7 +4,6 @@ namespace Slothsoft\Chat\Executables;
 
 use Slothsoft\Chat\Model;
 use Slothsoft\Core\Calendar\Seconds;
-use Slothsoft\Core\DBMS\DatabaseException;
 use Slothsoft\Core\IO\Writable\DOMWriterDocumentFromElementTrait;
 use Slothsoft\Farah\Module\Executables\ExecutableDOMWriterBase;
 use DOMDocument;
@@ -14,27 +13,18 @@ class Fetch extends ExecutableDOMWriterBase
 {
     use DOMWriterDocumentFromElementTrait;
     
-    private $dbName;
-    private $tableName;
+    private $chat;
     private $duration;
-    public function __construct(string $dbName, string $tableName, int $duration) {
-        $this->dbName = $dbName;
-        $this->tableName = $tableName;
+    public function __construct(Model $chat, int $duration) {
+        $this->chat = $chat;
         $this->duration = $duration;
     }
     public function toElement(DOMDocument $targetDoc) : DOMElement
     {
-        $chat = new Model();
-        try {
-            $chat->init($this->dbName, $this->tableName);
-        } catch (DatabaseException $e) {
-            
-        }
-        
         $end = time();
         $start = $end - $this->duration * Seconds::DAY;
         
-        return $chat->getRangeNode($start, $end, $targetDoc);
+        return $this->chat->getRangeNode($start, $end, $targetDoc);
     }
 
 }
