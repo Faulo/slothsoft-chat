@@ -13,23 +13,23 @@
     
     <fragment name="api">
     	<fragment name="form">
-	      <use-template ref="xsl/form"/>
-	      <use-document ref="data/fetch"/>
-	      <link-stylesheet ref="css/default"/>
-	      <link-script ref="js/Control"/>
+	      <use-template ref="/xsl/form"/>
+	      <use-document ref="/data/fetch"/>
+	      <link-stylesheet ref="/css/default"/>
+	      <link-script ref="/js/Control"/>
 	      <import ref="//slothsoft@core/api/DOM"/>
 	      <import ref="//slothsoft@sse/api/client"/>
     	</fragment>
     	
     	<fragment name="shoutbox">
-	      <use-template ref="xsl/shoutbox"/>
-	      <use-document ref="api/form"/>
+	      <use-template ref="/xsl/shoutbox"/>
+	      <use-document ref="/api/form"/>
     	</fragment>
     	
 	    <fragment name="archive">
-	      <use-template ref="xsl/archive"/>
-	      <use-document ref="data/archive"/>
-	      <link-stylesheet ref="css/default"/>
+	      <use-template ref="/xsl/archive"/>
+	      <use-document ref="/data/archive"/>
+	      <link-stylesheet ref="/css/default"/>
 	    </fragment>
     </fragment>
   </assets>
