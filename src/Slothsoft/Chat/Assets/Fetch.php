@@ -3,42 +3,29 @@ declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Chat\Model;
-use Slothsoft\Chat\Executables\ChatExecutableCreator;
-use Slothsoft\Core\DBMS\DatabaseException;
-use Slothsoft\Farah\Module\Executables\ExecutableInterface;
-use Slothsoft\Farah\Module\FarahUrl\FarahUrlArguments;
-use Slothsoft\Farah\Module\Node\Asset\AssetBase;
-use Slothsoft\Farah\Module\ParameterFilters\MapFilter;
-use Slothsoft\Farah\Module\ParameterFilters\ParameterFilterInterface;
+use Slothsoft\Core\Calendar\Seconds;
+use Slothsoft\Core\IO\Writable\DOMWriterDocumentFromElementTrait;
+use DOMDocument;
+use DOMElement;
+use Slothsoft\Core\IO\Writable\DOMWriterInterface;
 
-class Fetch extends AssetBase
+class Fetch implements DOMWriterInterface
 {
-    protected function loadParameterFilter(): ParameterFilterInterface
+    use DOMWriterDocumentFromElementTrait;
+    
+    private $chat;
+    private $duration;
+    public function __construct(Model $chat, int $duration) {
+        $this->chat = $chat;
+        $this->duration = $duration;
+    }
+    public function toElement(DOMDocument $targetDoc) : DOMElement
     {
-        return new MapFilter([
-            'chat-database' => 'minecraft_log',
-            'chat-duration' => 1,
-        ]);
+        $end = time();
+        $start = $end - $this->duration * Seconds::DAY;
+        
+        return $this->chat->getRangeNode($start, $end, $targetDoc);
     }
 
-    protected function loadExecutable(FarahUrlArguments $args): ExecutableInterface
-    {
-        $tableName = $args->get('chat-database');
-        if ($tableName === 'minecraft_log') {
-            $dbName = 'cms';
-        } else {
-            $dbName = 'chat';
-        }
-        $duration = (int) $args->get('chat-duration');
-        
-        $chat = new Model($dbName, $tableName);
-        try {
-            $chat->init();
-        } catch (DatabaseException $e) {
-        }
-        
-        $creator = new ChatExecutableCreator($this, $args);
-        return $creator->createFetch($chat, $duration);
-    }
 }
 

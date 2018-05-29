@@ -6,8 +6,12 @@
     
     <resource-directory name="dictionary" type="application/xml"/>
     <fragment name="data">
-    	<custom-asset name="fetch" class="Slothsoft\Chat\Assets\Fetch"/>
-    	<custom-asset name="sse" class="Slothsoft\Chat\Assets\ServerSentEvent"/>
+    	<custom-asset name="fetch"
+			parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter"
+			executable-builder="Slothsoft\Chat\Assets\FetchBuilder"/>
+    	<custom-asset name="sse" 
+    		parameter-filter="Slothsoft\Chat\Assets\SSEParameterFilter"
+    		executable-builder="Slothsoft\Chat\Assets\SSEBuilder"/>
     	<fragment name="archive"/>
     </fragment>
     

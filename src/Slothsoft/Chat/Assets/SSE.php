@@ -1,6 +1,6 @@
 <?php
 declare(strict_types = 1);
-namespace Slothsoft\Chat\Executables;
+namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Chat\SSEServer;
 use Slothsoft\Farah\Module\Executables\ExecutableBase;

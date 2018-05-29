@@ -6,25 +6,14 @@ use Slothsoft\Chat\Model;
 use Slothsoft\Chat\SSEServer;
 use Slothsoft\Chat\Executables\ChatExecutableCreator;
 use Slothsoft\Core\DBMS\DatabaseException;
-use Slothsoft\Farah\Module\Executables\ExecutableInterface;
-use Slothsoft\Farah\Module\FarahUrl\FarahUrlArguments;
-use Slothsoft\Farah\Module\Node\Asset\AssetBase;
-use Slothsoft\Farah\Module\ParameterFilters\MapFilter;
-use Slothsoft\Farah\Module\ParameterFilters\ParameterFilterInterface;
+use Slothsoft\Farah\FarahUrl\FarahUrlArguments;
+use Slothsoft\Farah\Module\Asset\AssetInterface;
+use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface;
+use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 
-
-class ServerSentEvent extends AssetBase
+class SSEBuilder implements ExecutableBuilderStrategyInterface
 {
-    protected function loadParameterFilter(): ParameterFilterInterface
-    {
-        return new MapFilter([
-            'mode' => '',
-            'name' => 'minecraft_log',
-            'lastId' => 0,
-        ]);
-    }
-    
-    protected function loadExecutable(FarahUrlArguments $args): ExecutableInterface
+    public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
     {
         $tableName = $args->get('name');
         if ($tableName === 'minecraft_log') {
@@ -49,5 +38,6 @@ class ServerSentEvent extends AssetBase
         $creator = new ChatExecutableCreator($this, $args);
         return $creator->createSSE($sse);
     }
+
 }
 

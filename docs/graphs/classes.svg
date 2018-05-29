@@ -21,108 +21,108 @@
 <path fill="none" stroke="gray" d="M565.856,-24C565.856,-24 731.856,-24 731.856,-24 737.856,-24 743.856,-30 743.856,-36 743.856,-36 743.856,-516 743.856,-516 743.856,-522 737.856,-528 731.856,-528 731.856,-528 565.856,-528 565.856,-528 559.856,-528 553.856,-522 553.856,-516 553.856,-516 553.856,-36 553.856,-36 553.856,-30 559.856,-24 565.856,-24"/>
 <text text-anchor="middle" x="648.856" y="-515.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Chat</text>
 </g>
-<g id="clust5" class="cluster"><title>cluster_\Slothsoft\Chat\Assets</title>
-<path fill="none" stroke="gray" d="M593.856,-186C593.856,-186 703.856,-186 703.856,-186 709.856,-186 715.856,-192 715.856,-198 715.856,-198 715.856,-300 715.856,-300 715.856,-306 709.856,-312 703.856,-312 703.856,-312 593.856,-312 593.856,-312 587.856,-312 581.856,-306 581.856,-300 581.856,-300 581.856,-198 581.856,-198 581.856,-192 587.856,-186 593.856,-186"/>
-<text text-anchor="middle" x="648.856" y="-299.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Assets</text>
+<g id="clust4" class="cluster"><title>cluster_\Slothsoft\Chat\Assets</title>
+<path fill="none" stroke="gray" d="M593.856,-374C593.856,-374 703.856,-374 703.856,-374 709.856,-374 715.856,-380 715.856,-386 715.856,-386 715.856,-488 715.856,-488 715.856,-494 709.856,-500 703.856,-500 703.856,-500 593.856,-500 593.856,-500 587.856,-500 581.856,-494 581.856,-488 581.856,-488 581.856,-386 581.856,-386 581.856,-380 587.856,-374 593.856,-374"/>
+<text text-anchor="middle" x="648.856" y="-487.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Assets</text>
 </g>
-<g id="clust4" class="cluster"><title>cluster_\Slothsoft\Chat\Executables</title>
-<path fill="none" stroke="gray" d="M573.856,-320C573.856,-320 723.856,-320 723.856,-320 729.856,-320 735.856,-326 735.856,-332 735.856,-332 735.856,-488 735.856,-488 735.856,-494 729.856,-500 723.856,-500 723.856,-500 573.856,-500 573.856,-500 567.856,-500 561.856,-494 561.856,-488 561.856,-488 561.856,-332 561.856,-332 561.856,-326 567.856,-320 573.856,-320"/>
-<text text-anchor="middle" x="648.856" y="-487.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Executables</text>
+<g id="clust5" class="cluster"><title>cluster_\Slothsoft\Chat\Executables</title>
+<path fill="none" stroke="gray" d="M573.856,-186C573.856,-186 723.856,-186 723.856,-186 729.856,-186 735.856,-192 735.856,-198 735.856,-198 735.856,-354 735.856,-354 735.856,-360 729.856,-366 723.856,-366 723.856,-366 573.856,-366 573.856,-366 567.856,-366 561.856,-360 561.856,-354 561.856,-354 561.856,-198 561.856,-198 561.856,-192 567.856,-186 573.856,-186"/>
+<text text-anchor="middle" x="648.856" y="-353.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Executables</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Executables\\SSE -->
-<g id="node1" class="node"><title>\\Slothsoft\\Chat\\Executables\\SSE</title>
+<!-- \\Slothsoft\\Chat\\Assets\\Fetch -->
+<g id="node1" class="node"><title>\\Slothsoft\\Chat\\Assets\\Fetch</title>
 <polygon fill="none" stroke="black" points="675.856,-472 621.856,-472 621.856,-436 675.856,-436 675.856,-472"/>
-<text text-anchor="middle" x="648.856" y="-451.2" font-family="Courier,monospace" font-size="11.00">SSE</text>
+<text text-anchor="middle" x="648.856" y="-451.2" font-family="Courier,monospace" font-size="11.00">Fetch</text>
 </g>
-<!-- \\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase -->
-<g id="node9" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase</title>
-<ellipse fill="none" stroke="black" cx="248.928" cy="-454" rx="204.964" ry="18"/>
-<text text-anchor="middle" x="248.928" y="-450.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableBase</text>
+<!-- \\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
+<g id="node9" class="node"><title>\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
+<ellipse fill="none" stroke="black" cx="248.928" cy="-427" rx="185.467" ry="18"/>
+<text text-anchor="middle" x="248.928" y="-423.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Node\Asset\AssetBase</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Executables\\SSE&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase -->
-<g id="edge1" class="edge"><title>\\Slothsoft\\Chat\\Executables\\SSE&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase</title>
-<path fill="none" stroke="black" d="M621.747,-454C588.347,-454 527.225,-454 464.053,-454"/>
-<polygon fill="none" stroke="black" points="463.901,-450.5 453.901,-454 463.901,-457.5 463.901,-450.5"/>
+<!-- \\Slothsoft\\Chat\\Assets\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
+<g id="edge1" class="edge"><title>\\Slothsoft\\Chat\\Assets\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
+<path fill="none" stroke="black" d="M621.747,-452.228C579.049,-449.331 491.047,-443.36 411.374,-437.954"/>
+<polygon fill="none" stroke="black" points="411.415,-434.449 401.201,-437.264 410.941,-441.433 411.415,-434.449"/>
+</g>
+<!-- \\Slothsoft\\Chat\\Assets\\ServerSentEvent -->
+<g id="node2" class="node"><title>\\Slothsoft\\Chat\\Assets\\ServerSentEvent</title>
+<polygon fill="none" stroke="black" points="707.856,-418 589.856,-418 589.856,-382 707.856,-382 707.856,-418"/>
+<text text-anchor="middle" x="648.856" y="-397.2" font-family="Courier,monospace" font-size="11.00">ServerSentEvent</text>
+</g>
+<!-- \\Slothsoft\\Chat\\Assets\\ServerSentEvent&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
+<g id="edge2" class="edge"><title>\\Slothsoft\\Chat\\Assets\\ServerSentEvent&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
+<path fill="none" stroke="black" d="M589.568,-403.955C542.642,-407.139 474.343,-411.773 411.277,-416.052"/>
+<polygon fill="none" stroke="black" points="410.944,-412.567 401.204,-416.736 411.418,-419.551 410.944,-412.567"/>
 </g>
 <!-- \\Slothsoft\\Chat\\Executables\\ChatExecutableCreator -->
-<g id="node2" class="node"><title>\\Slothsoft\\Chat\\Executables\\ChatExecutableCreator</title>
-<polygon fill="none" stroke="black" points="727.856,-418 569.856,-418 569.856,-382 727.856,-382 727.856,-418"/>
-<text text-anchor="middle" x="648.856" y="-397.2" font-family="Courier,monospace" font-size="11.00">ChatExecutableCreator</text>
+<g id="node3" class="node"><title>\\Slothsoft\\Chat\\Executables\\ChatExecutableCreator</title>
+<polygon fill="none" stroke="black" points="727.856,-338 569.856,-338 569.856,-302 727.856,-302 727.856,-338"/>
+<text text-anchor="middle" x="648.856" y="-317.2" font-family="Courier,monospace" font-size="11.00">ChatExecutableCreator</text>
 </g>
 <!-- \\Slothsoft\\Farah\\Module\\Executables\\ExecutableCreator -->
-<g id="node11" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableCreator</title>
-<ellipse fill="none" stroke="black" cx="248.928" cy="-400" rx="214.462" ry="18"/>
-<text text-anchor="middle" x="248.928" y="-396.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableCreator</text>
+<g id="node10" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableCreator</title>
+<ellipse fill="none" stroke="black" cx="248.928" cy="-320" rx="214.462" ry="18"/>
+<text text-anchor="middle" x="248.928" y="-316.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableCreator</text>
 </g>
 <!-- \\Slothsoft\\Chat\\Executables\\ChatExecutableCreator&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableCreator -->
 <g id="edge3" class="edge"><title>\\Slothsoft\\Chat\\Executables\\ChatExecutableCreator&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableCreator</title>
-<path fill="none" stroke="black" d="M569.713,-400C541.593,-400 508.291,-400 473.978,-400"/>
-<polygon fill="none" stroke="black" points="473.791,-396.5 463.791,-400 473.791,-403.5 473.791,-396.5"/>
+<path fill="none" stroke="black" d="M569.713,-320C541.593,-320 508.291,-320 473.978,-320"/>
+<polygon fill="none" stroke="black" points="473.791,-316.5 463.791,-320 473.791,-323.5 473.791,-316.5"/>
 </g>
 <!-- \\Slothsoft\\Chat\\Executables\\Fetch -->
-<g id="node3" class="node"><title>\\Slothsoft\\Chat\\Executables\\Fetch</title>
-<polygon fill="none" stroke="black" points="675.856,-364 621.856,-364 621.856,-328 675.856,-328 675.856,-364"/>
-<text text-anchor="middle" x="648.856" y="-343.2" font-family="Courier,monospace" font-size="11.00">Fetch</text>
+<g id="node4" class="node"><title>\\Slothsoft\\Chat\\Executables\\Fetch</title>
+<polygon fill="none" stroke="black" points="675.856,-284 621.856,-284 621.856,-248 675.856,-248 675.856,-284"/>
+<text text-anchor="middle" x="648.856" y="-263.2" font-family="Courier,monospace" font-size="11.00">Fetch</text>
 </g>
 <!-- \\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase -->
-<g id="node13" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase</title>
-<ellipse fill="none" stroke="black" cx="248.928" cy="-346" rx="248.856" ry="18"/>
-<text text-anchor="middle" x="248.928" y="-342.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableDOMWriterBase</text>
+<g id="node11" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase</title>
+<ellipse fill="none" stroke="black" cx="248.928" cy="-266" rx="248.856" ry="18"/>
+<text text-anchor="middle" x="248.928" y="-262.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableDOMWriterBase</text>
 </g>
 <!-- \\Slothsoft\\Chat\\Executables\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase -->
-<g id="edge5" class="edge"><title>\\Slothsoft\\Chat\\Executables\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase</title>
-<path fill="none" stroke="black" d="M621.747,-346C596.295,-346 554.745,-346 508.457,-346"/>
-<polygon fill="none" stroke="black" points="508.196,-342.5 498.196,-346 508.196,-349.5 508.196,-342.5"/>
+<g id="edge4" class="edge"><title>\\Slothsoft\\Chat\\Executables\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableDOMWriterBase</title>
+<path fill="none" stroke="black" d="M621.747,-266C596.295,-266 554.745,-266 508.457,-266"/>
+<polygon fill="none" stroke="black" points="508.196,-262.5 498.196,-266 508.196,-269.5 508.196,-262.5"/>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\ServerSentEvent -->
-<g id="node4" class="node"><title>\\Slothsoft\\Chat\\Assets\\ServerSentEvent</title>
-<polygon fill="none" stroke="black" points="707.856,-284 589.856,-284 589.856,-248 707.856,-248 707.856,-284"/>
-<text text-anchor="middle" x="648.856" y="-263.2" font-family="Courier,monospace" font-size="11.00">ServerSentEvent</text>
-</g>
-<!-- \\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
-<g id="node12" class="node"><title>\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
-<ellipse fill="none" stroke="black" cx="248.928" cy="-239" rx="185.467" ry="18"/>
-<text text-anchor="middle" x="248.928" y="-235.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Node\Asset\AssetBase</text>
-</g>
-<!-- \\Slothsoft\\Chat\\Assets\\ServerSentEvent&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
-<g id="edge4" class="edge"><title>\\Slothsoft\\Chat\\Assets\\ServerSentEvent&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
-<path fill="none" stroke="black" d="M589.568,-262.045C542.642,-258.861 474.343,-254.227 411.277,-249.948"/>
-<polygon fill="none" stroke="black" points="411.418,-246.449 401.204,-249.264 410.944,-253.433 411.418,-246.449"/>
-</g>
-<!-- \\Slothsoft\\Chat\\Assets\\Fetch -->
-<g id="node5" class="node"><title>\\Slothsoft\\Chat\\Assets\\Fetch</title>
+<!-- \\Slothsoft\\Chat\\Executables\\SSE -->
+<g id="node5" class="node"><title>\\Slothsoft\\Chat\\Executables\\SSE</title>
 <polygon fill="none" stroke="black" points="675.856,-230 621.856,-230 621.856,-194 675.856,-194 675.856,-230"/>
-<text text-anchor="middle" x="648.856" y="-209.2" font-family="Courier,monospace" font-size="11.00">Fetch</text>
+<text text-anchor="middle" x="648.856" y="-209.2" font-family="Courier,monospace" font-size="11.00">SSE</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase -->
-<g id="edge6" class="edge"><title>\\Slothsoft\\Chat\\Assets\\Fetch&#45;&gt;\\Slothsoft\\Farah\\Module\\Node\\Asset\\AssetBase</title>
-<path fill="none" stroke="black" d="M621.747,-213.772C579.049,-216.669 491.047,-222.64 411.374,-228.046"/>
-<polygon fill="none" stroke="black" points="410.941,-224.567 401.201,-228.736 411.415,-231.551 410.941,-224.567"/>
+<!-- \\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase -->
+<g id="node12" class="node"><title>\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase</title>
+<ellipse fill="none" stroke="black" cx="248.928" cy="-212" rx="204.964" ry="18"/>
+<text text-anchor="middle" x="248.928" y="-208.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Executables\ExecutableBase</text>
 </g>
-<!-- \\Slothsoft\\Chat\\SSEServer -->
-<g id="node6" class="node"><title>\\Slothsoft\\Chat\\SSEServer</title>
-<polygon fill="none" stroke="black" points="687.356,-176 610.356,-176 610.356,-140 687.356,-140 687.356,-176"/>
-<text text-anchor="middle" x="648.856" y="-155.2" font-family="Courier,monospace" font-size="11.00">SSEServer</text>
+<!-- \\Slothsoft\\Chat\\Executables\\SSE&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase -->
+<g id="edge5" class="edge"><title>\\Slothsoft\\Chat\\Executables\\SSE&#45;&gt;\\Slothsoft\\Farah\\Module\\Executables\\ExecutableBase</title>
+<path fill="none" stroke="black" d="M621.747,-212C588.347,-212 527.225,-212 464.053,-212"/>
+<polygon fill="none" stroke="black" points="463.901,-208.5 453.901,-212 463.901,-215.5 463.901,-208.5"/>
 </g>
-<!-- \\Slothsoft\\SSE\\Server -->
-<g id="node10" class="node"><title>\\Slothsoft\\SSE\\Server</title>
-<ellipse fill="none" stroke="black" cx="248.928" cy="-158" rx="90.9839" ry="18"/>
-<text text-anchor="middle" x="248.928" y="-154.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\SSE\Server</text>
-</g>
-<!-- \\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server -->
-<g id="edge2" class="edge"><title>\\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server</title>
-<path fill="none" stroke="black" d="M610.061,-158C550.964,-158 434.71,-158 350.23,-158"/>
-<polygon fill="none" stroke="black" points="350.091,-154.5 340.091,-158 350.091,-161.5 350.091,-154.5"/>
+<!-- \\Slothsoft\\Chat\\MinecraftLog -->
+<g id="node6" class="node"><title>\\Slothsoft\\Chat\\MinecraftLog</title>
+<polygon fill="none" stroke="black" points="697.856,-176 599.856,-176 599.856,-140 697.856,-140 697.856,-176"/>
+<text text-anchor="middle" x="648.856" y="-155.2" font-family="Courier,monospace" font-size="11.00">MinecraftLog</text>
 </g>
 <!-- \\Slothsoft\\Chat\\Model -->
 <g id="node7" class="node"><title>\\Slothsoft\\Chat\\Model</title>
 <polygon fill="none" stroke="black" points="675.856,-122 621.856,-122 621.856,-86 675.856,-86 675.856,-122"/>
 <text text-anchor="middle" x="648.856" y="-101.2" font-family="Courier,monospace" font-size="11.00">Model</text>
 </g>
-<!-- \\Slothsoft\\Chat\\MinecraftLog -->
-<g id="node8" class="node"><title>\\Slothsoft\\Chat\\MinecraftLog</title>
-<polygon fill="none" stroke="black" points="697.856,-68 599.856,-68 599.856,-32 697.856,-32 697.856,-68"/>
-<text text-anchor="middle" x="648.856" y="-47.2" font-family="Courier,monospace" font-size="11.00">MinecraftLog</text>
+<!-- \\Slothsoft\\Chat\\SSEServer -->
+<g id="node8" class="node"><title>\\Slothsoft\\Chat\\SSEServer</title>
+<polygon fill="none" stroke="black" points="687.356,-68 610.356,-68 610.356,-32 687.356,-32 687.356,-68"/>
+<text text-anchor="middle" x="648.856" y="-47.2" font-family="Courier,monospace" font-size="11.00">SSEServer</text>
+</g>
+<!-- \\Slothsoft\\SSE\\Server -->
+<g id="node13" class="node"><title>\\Slothsoft\\SSE\\Server</title>
+<ellipse fill="none" stroke="black" cx="248.928" cy="-50" rx="90.9839" ry="18"/>
+<text text-anchor="middle" x="248.928" y="-46.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\SSE\Server</text>
+</g>
+<!-- \\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server -->
+<g id="edge6" class="edge"><title>\\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server</title>
+<path fill="none" stroke="black" d="M610.061,-50C550.964,-50 434.71,-50 350.23,-50"/>
+<polygon fill="none" stroke="black" points="350.091,-46.5001 340.091,-50 350.091,-53.5001 350.091,-46.5001"/>
 </g>
 </g>
 </svg>
