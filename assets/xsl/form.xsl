@@ -20,7 +20,7 @@
 		</div>
 	</xsl:template>
 	
-	<xsl:template match="range">
+	<xsl:template match="range" priority="1">
 		<xsl:apply-templates select="p"/>
 	</xsl:template>
 	

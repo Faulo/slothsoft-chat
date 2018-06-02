@@ -280,10 +280,10 @@ class Model
             'id' => 'int(11) NOT NULL AUTO_INCREMENT',
             'time' => 'int(11) NOT NULL',
             'message' => 'text NOT NULL',
-            'speaker' => 'tinytext NOT NULL',
+            'speaker' => 'tinytext NULL',
             'type' => 'int(11) NOT NULL DEFAULT "0"',
             'ip' => 'tinytext NOT NULL',
-            'raw' => 'text NOT NULL'
+            'raw' => 'text NULL'
         ];
         $sqlKeys = [
             'id',

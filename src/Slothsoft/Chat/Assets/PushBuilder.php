@@ -4,14 +4,15 @@ namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Chat\Model;
 use Slothsoft\Chat\SSEServer;
-use Slothsoft\Chat\Executables\ChatExecutableCreator;
 use Slothsoft\Core\DBMS\DatabaseException;
+use Slothsoft\Farah\Kernel;
 use Slothsoft\Farah\FarahUrl\FarahUrlArguments;
 use Slothsoft\Farah\Module\Asset\AssetInterface;
 use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface;
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
+use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\NullResultBuilder;
 
-class SSEBuilder implements ExecutableBuilderStrategyInterface
+class PushBuilder implements ExecutableBuilderStrategyInterface
 {
     public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
     {
@@ -21,7 +22,6 @@ class SSEBuilder implements ExecutableBuilderStrategyInterface
         } else {
             $dbName = 'chat';
         }
-        $lastId = (int) $args->get('lastId');
         
         $chat = new Model($dbName, $tableName);
         try {
@@ -31,12 +31,22 @@ class SSEBuilder implements ExecutableBuilderStrategyInterface
         
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
-            $sse->init($lastId);
+            $sse->init();
         } catch(DatabaseException $e) {
         }
         
-        $creator = new ChatExecutableCreator($this, $args);
-        return $creator->createSSE($sse);
+        $messageType = $args->get('type');
+        
+        $request = Kernel::getCurrentRequest();
+        $env = $request->getServerParams();
+        
+        $messageBody = json_decode($request->getBody()->getContents());
+        $messageTime = $env['REQUEST_TIME'];
+        $messageIp = $env['REMOTE_ADDR'];
+        $res = $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
+        
+        $resultBuilder = new NullResultBuilder();
+        return new ExecutableStrategies($resultBuilder);
     }
 
 }

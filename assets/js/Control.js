@@ -47,7 +47,7 @@ ChatControl.events = {
 		try {
 			if (eve.data) {
 				DOMHelper.parse(eve.data)
-					.then(this.sseClient._chat.append);
+					.then(this.sseClient._chat.append.bind(this.sseClient._chat));
 			}
 		} catch(e) {
 			console.log("%o", e);
@@ -85,10 +85,10 @@ ChatControl.prototype.init = function(formElement, templateDoc, autoFocus) {
 		},
 		false
 	);
-	this.lastId = XPath.evaluate("number(@data-chat-last-id)", this.formNode);
-	this.dbName = XPath.evaluate("string(@data-chat-database)", this.formNode);
-	this.listNode = XPath.evaluate(".//*[@data-chat-id='list']", this.formNode)[0];
-	this.inputNode = XPath.evaluate(".//*[@data-chat-id='input']", this.formNode)[0];
+	this.lastId = this.formNode.getAttribute("data-chat-last-id");
+	this.dbName = this.formNode.getAttribute("data-chat-database");
+	this.listNode = this.formNode.querySelector("[data-chat-id='list']");
+	this.inputNode = this.formNode.querySelector("[data-chat-id='input']");
 	this.inputNode.value = "Initializing Server Connection...";
 	var scrollOffset = 0;
 	for (i = 0; i < this.listNode.childNodes.length; i++) {
@@ -143,7 +143,7 @@ ChatControl.prototype.send = function() {
 };
 ChatControl.prototype.append = function(dataDoc) {
 	var nodeList, i, liList, node;
-	this.lastId = XPath.evaluate("number(/data/range/@last-id)", dataDoc);
+	this.lastId = XPath.evaluate("number(/range/@last-id)", dataDoc);
 	nodeList = XSLT.transformToFragment(dataDoc, this.templateDoc, this.listNode.ownerDocument).childNodes;
 	liList = [];
 	for (i = 0; i < nodeList.length; i++) {

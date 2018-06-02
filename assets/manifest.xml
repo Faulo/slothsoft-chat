@@ -6,34 +6,41 @@
     
     <resource-directory name="dictionary" type="application/xml"/>
     <fragment name="data">
-    	<custom-asset name="fetch"
-			parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter"
-			executable-builder="Slothsoft\Chat\Assets\FetchBuilder"/>
-    	<custom-asset name="sse" 
-    		parameter-filter="Slothsoft\Chat\Assets\SSEParameterFilter"
-    		executable-builder="Slothsoft\Chat\Assets\SSEBuilder"/>
-    	<fragment name="archive"/>
+    	<custom-asset name="fetch" 
+    		parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter" 
+    		executable-builder="Slothsoft\Chat\Assets\FetchBuilder"/>
+    	<custom-asset name="sse">
+	    	<custom-asset name="pull" 
+	    		parameter-filter="Slothsoft\Chat\Assets\PullParameterFilter" 
+	    		executable-builder="Slothsoft\Chat\Assets\PullBuilder"/>
+	    	<custom-asset name="push" 
+	    		parameter-filter="Slothsoft\Chat\Assets\PushParameterFilter" 
+	    		executable-builder="Slothsoft\Chat\Assets\PushBuilder"/>
+	    	<custom-asset name="last" 
+	    		parameter-filter="Slothsoft\Chat\Assets\LastParameterFilter" 
+	    		executable-builder="Slothsoft\Chat\Assets\LastBuilder"/>
+	   	</custom-asset>
     </fragment>
     
     <fragment name="api">
     	<fragment name="form">
-	      <use-template ref="/xsl/form"/>
-	      <use-document ref="/data/fetch"/>
-	      <link-stylesheet ref="/css/default"/>
-	      <link-script ref="/js/Control"/>
-	      <import ref="//slothsoft@core/api/DOM"/>
-	      <import ref="//slothsoft@sse/api/client"/>
+	      <use-template ref="/xsl/form" name="form"/>
+	      <use-document ref="/data/fetch" name="fetch"/>
+	      <link-stylesheet ref="/css/default" name="default"/>
+	      <link-script ref="/js/Control" name="Control"/>
+	      <import ref="//slothsoft@core/api/DOM" name="DOM"/>
+	      <import ref="//slothsoft@sse/api/client" name="client"/>
     	</fragment>
     	
     	<fragment name="shoutbox">
-	      <use-template ref="/xsl/shoutbox"/>
-	      <use-document ref="/api/form"/>
+	      <use-template ref="/xsl/shoutbox" name="shoutbox"/>
+	      <use-document ref="/api/form" name="form"/>
     	</fragment>
     	
 	    <fragment name="archive">
-	      <use-template ref="/xsl/archive"/>
-	      <use-document ref="/data/archive"/>
-	      <link-stylesheet ref="/css/default"/>
+	      <use-template ref="/xsl/archive" name="archive"/>
+	      <use-document ref="/data/archive" name="archive"/>
+	      <link-stylesheet ref="/css/default" name="default"/>
 	    </fragment>
     </fragment>
   </assets>
