@@ -4,14 +4,15 @@ namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFilter;
 
-class PullParameterFilter extends AbstractMapParameterFilter
+class FetchParameterFilter extends AbstractMapParameterFilter
 {
     protected function loadMap(): array
     {
         return [
-            'name' => 'minecraft_log',
-            'lastId' => 0,
+            'chat-database' => 'minecraft_log',
+            'chat-duration' => 1,
         ];
     }
 }
+
 
