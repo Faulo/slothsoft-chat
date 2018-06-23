@@ -32,10 +32,12 @@ class SSEServer extends Server
         return $this->model->insert($data, $time, $ip);
     }
 
-    public function fetchNewEvents($lastId) : iterable
+    public function fetchNewEvents($lastId): iterable
     {
         if ($ret = $this->model->getMessageList($lastId)) {
-            return [$this->_parseEventList(...$ret)];
+            return [
+                $this->_parseEventList(...$ret)
+            ];
         } else {
             return [];
         }
@@ -49,7 +51,7 @@ class SSEServer extends Server
         return $ret;
     }
 
-    private function _parseEventList(array ...$eventList) : array
+    private function _parseEventList(array ...$eventList): array
     {
         $doc = $this->model->createRangeDocument($eventList);
         return [

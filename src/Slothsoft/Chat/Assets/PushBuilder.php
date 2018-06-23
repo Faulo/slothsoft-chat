@@ -14,6 +14,7 @@ use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\NullResultBuilder;
 
 class PushBuilder implements ExecutableBuilderStrategyInterface
 {
+
     public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
     {
         $tableName = $args->get('name');
@@ -26,14 +27,12 @@ class PushBuilder implements ExecutableBuilderStrategyInterface
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
-        } catch (DatabaseException $e) {
-        }
+        } catch (DatabaseException $e) {}
         
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init();
-        } catch(DatabaseException $e) {
-        }
+        } catch (DatabaseException $e) {}
         
         $messageType = $args->get('type');
         
@@ -48,6 +47,5 @@ class PushBuilder implements ExecutableBuilderStrategyInterface
         $resultBuilder = new NullResultBuilder();
         return new ExecutableStrategies($resultBuilder);
     }
-
 }
 

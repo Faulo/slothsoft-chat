@@ -6,11 +6,12 @@ use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFil
 
 class PushParameterFilter extends AbstractMapParameterFilter
 {
+
     protected function loadMap(): array
     {
         return [
             'name' => 'minecraft_log',
-            'type' => 'message',
+            'type' => 'message'
         ];
     }
 }

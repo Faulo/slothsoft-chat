@@ -6,11 +6,12 @@ use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFil
 
 class PullParameterFilter extends AbstractMapParameterFilter
 {
+
     protected function loadMap(): array
     {
         return [
             'name' => 'minecraft_log',
-            'lastId' => 0,
+            'lastId' => 0
         ];
     }
 }

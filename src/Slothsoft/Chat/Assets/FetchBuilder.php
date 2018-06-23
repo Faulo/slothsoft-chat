@@ -16,6 +16,7 @@ use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\DOMWriterResultBuild
 
 class FetchBuilder implements ExecutableBuilderStrategyInterface
 {
+
     public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
     {
         $tableName = $args->get('chat-database');
@@ -32,15 +33,13 @@ class FetchBuilder implements ExecutableBuilderStrategyInterface
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
-        } catch (DatabaseException $e) {
-        }
+        } catch (DatabaseException $e) {}
         
-        $writer = function(DOMDocument $targetDoc) use ($chat, $start, $end): DOMElement {
+        $writer = function (DOMDocument $targetDoc) use ($chat, $start, $end): DOMElement {
             return $chat->getRangeNode($start, $end, $targetDoc);
         };
         $resultBuilder = new DOMWriterResultBuilder(new ElementClosureDOMWriter($writer));
         return new ExecutableStrategies($resultBuilder);
     }
-
 }
 

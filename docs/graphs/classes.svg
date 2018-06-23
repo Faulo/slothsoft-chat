@@ -25,20 +25,20 @@
 <path fill="none" stroke="gray" d="M774.038,-186C774.038,-186 918.038,-186 918.038,-186 924.038,-186 930.038,-192 930.038,-198 930.038,-198 930.038,-516 930.038,-516 930.038,-522 924.038,-528 918.038,-528 918.038,-528 774.038,-528 774.038,-528 768.038,-528 762.038,-522 762.038,-516 762.038,-516 762.038,-198 762.038,-198 762.038,-192 768.038,-186 774.038,-186"/>
 <text text-anchor="middle" x="846.038" y="-515.2" font-family="Times New Roman,serif" font-size="11.00" fill="gray">Assets</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\FetchBuilder -->
-<g id="node1" class="node"><title>\\Slothsoft\\Chat\\Assets\\FetchBuilder</title>
-<polygon fill="none" stroke="black" points="895.038,-500 797.038,-500 797.038,-464 895.038,-464 895.038,-500"/>
-<text text-anchor="middle" x="846.038" y="-479.2" font-family="Courier,monospace" font-size="11.00">FetchBuilder</text>
+<!-- \\Slothsoft\\Chat\\Assets\\PushBuilder -->
+<g id="node1" class="node"><title>\\Slothsoft\\Chat\\Assets\\PushBuilder</title>
+<polygon fill="none" stroke="black" points="891.538,-500 800.538,-500 800.538,-464 891.538,-464 891.538,-500"/>
+<text text-anchor="middle" x="846.038" y="-479.2" font-family="Courier,monospace" font-size="11.00">PushBuilder</text>
 </g>
 <!-- \\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
 <g id="node10" class="node"><title>\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
 <ellipse fill="none" stroke="black" cx="349.019" cy="-428" rx="349.038" ry="18"/>
 <text text-anchor="middle" x="349.019" y="-424.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\FetchBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
-<g id="edge1" class="edge"><title>\\Slothsoft\\Chat\\Assets\\FetchBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M796.672,-476.724C730.639,-469.521 609.091,-456.261 509.446,-445.391"/>
-<polygon fill="none" stroke="black" points="509.581,-441.885 499.26,-444.28 508.822,-448.844 509.581,-441.885"/>
+<!-- \\Slothsoft\\Chat\\Assets\\PushBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
+<g id="edge1" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PushBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M800.235,-477.113C735.053,-470.002 610.78,-456.446 509.286,-445.374"/>
+<polygon fill="none" stroke="black" points="509.546,-441.882 499.225,-444.276 508.787,-448.84 509.546,-441.882"/>
 </g>
 <!-- \\Slothsoft\\Chat\\Assets\\FetchParameterFilter -->
 <g id="node2" class="node"><title>\\Slothsoft\\Chat\\Assets\\FetchParameterFilter</title>
@@ -55,70 +55,70 @@
 <path fill="none" stroke="black" d="M769.855,-266C742.228,-266 708.914,-266 673.281,-266"/>
 <polygon fill="none" stroke="black" points="673.173,-262.5 663.173,-266 673.173,-269.5 673.173,-262.5"/>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PullBuilder -->
-<g id="node3" class="node"><title>\\Slothsoft\\Chat\\Assets\\PullBuilder</title>
-<polygon fill="none" stroke="black" points="891.538,-446 800.538,-446 800.538,-410 891.538,-410 891.538,-446"/>
-<text text-anchor="middle" x="846.038" y="-425.2" font-family="Courier,monospace" font-size="11.00">PullBuilder</text>
+<!-- \\Slothsoft\\Chat\\Assets\\FetchBuilder -->
+<g id="node3" class="node"><title>\\Slothsoft\\Chat\\Assets\\FetchBuilder</title>
+<polygon fill="none" stroke="black" points="895.038,-446 797.038,-446 797.038,-410 895.038,-410 895.038,-446"/>
+<text text-anchor="middle" x="846.038" y="-425.2" font-family="Courier,monospace" font-size="11.00">FetchBuilder</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PullBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
-<g id="edge3" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PullBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M800.235,-428C776.251,-428 744.267,-428 708.361,-428"/>
-<polygon fill="none" stroke="black" points="708.133,-424.5 698.133,-428 708.133,-431.5 708.133,-424.5"/>
+<!-- \\Slothsoft\\Chat\\Assets\\FetchBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
+<g id="edge4" class="edge"><title>\\Slothsoft\\Chat\\Assets\\FetchBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M796.672,-428C773.146,-428 742.573,-428 708.454,-428"/>
+<polygon fill="none" stroke="black" points="708.25,-424.5 698.25,-428 708.25,-431.5 708.25,-424.5"/>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PullParameterFilter -->
-<g id="node4" class="node"><title>\\Slothsoft\\Chat\\Assets\\PullParameterFilter</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PushParameterFilter -->
+<g id="node4" class="node"><title>\\Slothsoft\\Chat\\Assets\\PushParameterFilter</title>
 <polygon fill="none" stroke="black" points="918.538,-338 773.538,-338 773.538,-302 918.538,-302 918.538,-338"/>
-<text text-anchor="middle" x="846.038" y="-317.2" font-family="Courier,monospace" font-size="11.00">PullParameterFilter</text>
+<text text-anchor="middle" x="846.038" y="-317.2" font-family="Courier,monospace" font-size="11.00">PushParameterFilter</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PullParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter -->
-<g id="edge4" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PullParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PushParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter -->
+<g id="edge5" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PushParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter</title>
 <path fill="none" stroke="black" d="M773.323,-312.177C703.655,-304.577 595.583,-292.788 506.077,-283.024"/>
 <polygon fill="none" stroke="black" points="506.413,-279.54 496.093,-281.935 505.654,-286.499 506.413,-279.54"/>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PushBuilder -->
-<g id="node5" class="node"><title>\\Slothsoft\\Chat\\Assets\\PushBuilder</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PullBuilder -->
+<g id="node5" class="node"><title>\\Slothsoft\\Chat\\Assets\\PullBuilder</title>
 <polygon fill="none" stroke="black" points="891.538,-392 800.538,-392 800.538,-356 891.538,-356 891.538,-392"/>
-<text text-anchor="middle" x="846.038" y="-371.2" font-family="Courier,monospace" font-size="11.00">PushBuilder</text>
+<text text-anchor="middle" x="846.038" y="-371.2" font-family="Courier,monospace" font-size="11.00">PullBuilder</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PushBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
-<g id="edge5" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PushBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PullBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface -->
+<g id="edge6" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PullBuilder&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ExecutableBuilderStrategy\\ExecutableBuilderStrategyInterface</title>
 <path fill="none" stroke="black" stroke-dasharray="1,5" d="M800.235,-378.887C735.053,-385.998 610.78,-399.554 509.286,-410.626"/>
 <polygon fill="none" stroke="black" points="508.787,-407.16 499.225,-411.724 509.546,-414.118 508.787,-407.16"/>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PushParameterFilter -->
-<g id="node6" class="node"><title>\\Slothsoft\\Chat\\Assets\\PushParameterFilter</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PullParameterFilter -->
+<g id="node6" class="node"><title>\\Slothsoft\\Chat\\Assets\\PullParameterFilter</title>
 <polygon fill="none" stroke="black" points="918.538,-230 773.538,-230 773.538,-194 918.538,-194 918.538,-230"/>
-<text text-anchor="middle" x="846.038" y="-209.2" font-family="Courier,monospace" font-size="11.00">PushParameterFilter</text>
+<text text-anchor="middle" x="846.038" y="-209.2" font-family="Courier,monospace" font-size="11.00">PullParameterFilter</text>
 </g>
-<!-- \\Slothsoft\\Chat\\Assets\\PushParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter -->
-<g id="edge6" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PushParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter</title>
+<!-- \\Slothsoft\\Chat\\Assets\\PullParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter -->
+<g id="edge7" class="edge"><title>\\Slothsoft\\Chat\\Assets\\PullParameterFilter&#45;&gt;\\Slothsoft\\Farah\\Module\\Asset\\ParameterFilterStrategy\\AbstractMapParameterFilter</title>
 <path fill="none" stroke="black" d="M773.323,-219.823C703.655,-227.423 595.583,-239.212 506.077,-248.976"/>
 <polygon fill="none" stroke="black" points="505.654,-245.501 496.093,-250.065 506.413,-252.46 505.654,-245.501"/>
 </g>
-<!-- \\Slothsoft\\Chat\\MinecraftLog -->
-<g id="node7" class="node"><title>\\Slothsoft\\Chat\\MinecraftLog</title>
-<polygon fill="none" stroke="black" points="895.038,-176 797.038,-176 797.038,-140 895.038,-140 895.038,-176"/>
-<text text-anchor="middle" x="846.038" y="-155.2" font-family="Courier,monospace" font-size="11.00">MinecraftLog</text>
+<!-- \\Slothsoft\\Chat\\SSEServer -->
+<g id="node7" class="node"><title>\\Slothsoft\\Chat\\SSEServer</title>
+<polygon fill="none" stroke="black" points="884.538,-176 807.538,-176 807.538,-140 884.538,-140 884.538,-176"/>
+<text text-anchor="middle" x="846.038" y="-155.2" font-family="Courier,monospace" font-size="11.00">SSEServer</text>
+</g>
+<!-- \\Slothsoft\\SSE\\Server -->
+<g id="node12" class="node"><title>\\Slothsoft\\SSE\\Server</title>
+<ellipse fill="none" stroke="black" cx="349.019" cy="-158" rx="90.9839" ry="18"/>
+<text text-anchor="middle" x="349.019" y="-154.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\SSE\Server</text>
+</g>
+<!-- \\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server -->
+<g id="edge3" class="edge"><title>\\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server</title>
+<path fill="none" stroke="black" d="M807.425,-158C732.16,-158 560.802,-158 450.518,-158"/>
+<polygon fill="none" stroke="black" points="450.372,-154.5 440.372,-158 450.372,-161.5 450.372,-154.5"/>
 </g>
 <!-- \\Slothsoft\\Chat\\Model -->
 <g id="node8" class="node"><title>\\Slothsoft\\Chat\\Model</title>
 <polygon fill="none" stroke="black" points="873.038,-122 819.038,-122 819.038,-86 873.038,-86 873.038,-122"/>
 <text text-anchor="middle" x="846.038" y="-101.2" font-family="Courier,monospace" font-size="11.00">Model</text>
 </g>
-<!-- \\Slothsoft\\Chat\\SSEServer -->
-<g id="node9" class="node"><title>\\Slothsoft\\Chat\\SSEServer</title>
-<polygon fill="none" stroke="black" points="884.538,-68 807.538,-68 807.538,-32 884.538,-32 884.538,-68"/>
-<text text-anchor="middle" x="846.038" y="-47.2" font-family="Courier,monospace" font-size="11.00">SSEServer</text>
-</g>
-<!-- \\Slothsoft\\SSE\\Server -->
-<g id="node12" class="node"><title>\\Slothsoft\\SSE\\Server</title>
-<ellipse fill="none" stroke="black" cx="349.019" cy="-50" rx="90.9839" ry="18"/>
-<text text-anchor="middle" x="349.019" y="-46.3" font-family="Times New Roman,serif" font-size="14.00" fill="gray">\Slothsoft\SSE\Server</text>
-</g>
-<!-- \\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server -->
-<g id="edge7" class="edge"><title>\\Slothsoft\\Chat\\SSEServer&#45;&gt;\\Slothsoft\\SSE\\Server</title>
-<path fill="none" stroke="black" d="M807.425,-50C732.16,-50 560.802,-50 450.518,-50"/>
-<polygon fill="none" stroke="black" points="450.372,-46.5001 440.372,-50 450.372,-53.5001 450.372,-46.5001"/>
+<!-- \\Slothsoft\\Chat\\MinecraftLog -->
+<g id="node9" class="node"><title>\\Slothsoft\\Chat\\MinecraftLog</title>
+<polygon fill="none" stroke="black" points="895.038,-68 797.038,-68 797.038,-32 895.038,-32 895.038,-68"/>
+<text text-anchor="middle" x="846.038" y="-47.2" font-family="Courier,monospace" font-size="11.00">MinecraftLog</text>
 </g>
 </g>
 </svg>
