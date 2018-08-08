@@ -9,6 +9,14 @@ export class App {
 		this.templateDoc = templateDoc;
 		this.autoFocus = autoFocus;
 		this.formNode = formElement;
+		
+		this.lastId = this.formNode.getAttribute("data-chat-last-id");
+		this.dbName = this.formNode.getAttribute("data-chat-database");
+		this.listNode = this.formNode.querySelector("[data-chat-id='list']");
+		this.inputNode = this.formNode.querySelector("[data-chat-id='input']");
+		this.inputNode.value = "Initializing Server Connection...";
+		this.scrollIntoView();
+
 		this.formNode.addEventListener(
 			"submit",
 			(eve) => {
@@ -36,11 +44,7 @@ export class App {
 			},
 			false
 		);
-		this.lastId = this.formNode.getAttribute("data-chat-last-id");
-		this.dbName = this.formNode.getAttribute("data-chat-database");
-		this.listNode = this.formNode.querySelector("[data-chat-id='list']");
-		this.inputNode = this.formNode.querySelector("[data-chat-id='input']");
-		this.inputNode.value = "Initializing Server Connection...";
+		
 		this.sse = new Client(
 			sseUri,
 			this.dbName,
@@ -61,8 +65,7 @@ export class App {
 								})
 								.then((fragment) => {
 									this.listNode.appendChild(fragment);
-									this.listNode.lastChild.scrollIntoView("smooth");
-									this.formNode.scrollIntoView("smooth");
+									this.scrollIntoView();
 								})
 								.catch((e) => {
 									console.log(e);
@@ -76,6 +79,10 @@ export class App {
 				}
 			}
 		);
+	}
+	scrollIntoView() {
+		this.listNode.lastChild.scrollIntoView("smooth");
+		this.formNode.scrollIntoView("smooth");
 	}
 }
 
