@@ -20,12 +20,10 @@
 
 	<fragment name="api">
 		<fragment name="form">
-			<use-template ref="/xsl/form" name="form" />
+			<use-template ref="/xsl/form"/>
 			<use-document ref="/data/fetch" name="fetch" />
-			<link-stylesheet ref="/css/default" name="default" />
-			<link-script ref="/js/Control" name="Control" />
-			<import ref="//slothsoft@core/api/DOM" name="DOM" />
-			<import ref="//slothsoft@sse/api/client" name="client" />
+			<link-stylesheet ref="/css/default"/>
+			<link-module ref="/js/Shoutbox"/>
 		</fragment>
 
 		<fragment name="shoutbox">
