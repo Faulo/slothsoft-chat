@@ -1,925 +1,873 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<meta charset="utf-8" />
-<title>&raquo; Compilation errors</title>
-<meta name="author" content="" />
-<meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
 
-<link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="../css/font-awesome.min.css" rel="stylesheet">
-<link href="../css/prism.css" rel="stylesheet" media="all" />
-<link href="../css/template.css" rel="stylesheet" media="all" />
-
-<!--[if lt IE 9]>
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
     <script src="../js/html5.js"></script>
     <![endif]-->
-<script src="../js/jquery-1.11.0.min.js"></script>
-<script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/jquery.smooth-scroll.js"></script>
-<script src="../js/prism.min.js"></script>
-<!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
-
-<link rel="shortcut icon" href="../images/favicon.ico" />
-<link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
-<link rel="apple-touch-icon" sizes="72x72"
-	href="../images/apple-touch-icon-72x72.png" />
-<link rel="apple-touch-icon" sizes="114x114"
-	href="../images/apple-touch-icon-114x114.png" />
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse"
-					data-target=".nav-collapse"> <i class="icon-ellipsis-vertical"></i>
-				</a> <a class="brand" href="../index.html">API Documentation</a>
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
 
-				<div class="nav-collapse">
-					<ul class="nav pull-right">
-						<li class="dropdown"><a href="../index.html"
-							class="dropdown-toggle" data-toggle="dropdown"> API
-								Documentation <b class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
-							</ul></li>
-						<li class="dropdown" id="charts-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> Charts <b
-								class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="../graphs/class.html"> <i
-										class="icon-list-alt"></i>&#160;Class hierarchy diagram
-								</a></li>
-							</ul></li>
-						<li class="dropdown" id="reports-menu"><a href="#"
-							class="dropdown-toggle" data-toggle="dropdown"> Reports <b
-								class="caret"></b>
-						</a>
-							<ul class="dropdown-menu">
-								<li><a href="../reports/errors.html"> <i
-										class="icon-list-alt"></i>&#160;Errors <span
-										class="label label-info pull-right">99</span>
-								</a></li>
-								<li><a href="../reports/markers.html"> <i
-										class="icon-list-alt"></i>&#160;Markers <span
-										class="label label-info pull-right">0</span>
-								</a></li>
-								<li><a href="../reports/deprecated.html"> <i
-										class="icon-list-alt"></i>&#160;Deprecated <span
-										class="label label-info pull-right">0</span>
-								</a></li>
-							</ul></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--<div class="go_to_top">-->
-		<!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
-		<!--</div>-->
-	</div>
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown">
+                        <a href="../index.html" class="dropdown-toggle" data-toggle="dropdown">
+                            API Documentation <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                                                        <li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
+                                                    </ul>
+                    </li>
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">99</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                            <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">0</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
 
-	<div id="___" class="container-fluid">
-		<section class="row-fluid">
-			<div class="span2 sidebar">
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
 
-				<ul class="side-nav nav nav-list">
-					<li class="nav-header">Navigation</li>
-					<li><a href="#Slothsoft\Chat\Assets\PushBuilder.php"><i
-							class="icon-file"></i> Slothsoft\Chat\Assets\PushBuilder.php</a></li>
-					<li><a href="#Slothsoft\Chat\Assets\FetchParameterFilter.php"><i
-							class="icon-file"></i>
-							Slothsoft\Chat\Assets\FetchParameterFilter.php</a></li>
-					<li><a href="#Slothsoft\Chat\SSEServer.php"><i
-							class="icon-file"></i> Slothsoft\Chat\SSEServer.php</a></li>
-					<li><a href="#Slothsoft\Chat\Assets\FetchBuilder.php"><i
-							class="icon-file"></i> Slothsoft\Chat\Assets\FetchBuilder.php</a></li>
-					<li><a href="#Slothsoft\Chat\Assets\PushParameterFilter.php"><i
-							class="icon-file"></i>
-							Slothsoft\Chat\Assets\PushParameterFilter.php</a></li>
-					<li><a href="#Slothsoft\Chat\Assets\PullBuilder.php"><i
-							class="icon-file"></i> Slothsoft\Chat\Assets\PullBuilder.php</a></li>
-					<li><a href="#Slothsoft\Chat\Assets\PullParameterFilter.php"><i
-							class="icon-file"></i>
-							Slothsoft\Chat\Assets\PullParameterFilter.php</a></li>
-					<li><a href="#Slothsoft\Chat\Model.php"><i
-							class="icon-file"></i> Slothsoft\Chat\Model.php</a></li>
-					<li><a href="#Slothsoft\Chat\MinecraftLog.php"><i
-							class="icon-file"></i> Slothsoft\Chat\MinecraftLog.php</a></li>
-					<li><a href="#registerModule.php"><i class="icon-file"></i>
-							registerModule.php</a></li>
-				</ul>
-			</div>
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#Slothsoft\Chat\Assets\PushBuilder.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\PushBuilder.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Assets\FetchParameterFilter.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\FetchParameterFilter.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\SSEServer.php"><i class="icon-file"></i> Slothsoft\Chat\SSEServer.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Assets\FetchBuilder.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\FetchBuilder.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Assets\PushParameterFilter.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\PushParameterFilter.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Assets\PullBuilder.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\PullBuilder.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Assets\PullParameterFilter.php"><i class="icon-file"></i> Slothsoft\Chat\Assets\PullParameterFilter.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\Model.php"><i class="icon-file"></i> Slothsoft\Chat\Model.php</a></li>
+                                                                                                    <li><a href="#Slothsoft\Chat\MinecraftLog.php"><i class="icon-file"></i> Slothsoft\Chat\MinecraftLog.php</a></li>
+                                                                                                    <li><a href="#registerModule.php"><i class="icon-file"></i> registerModule.php</a></li>
+                                                                    </ul>
+        </div>
 
-			<div class="span10 offset2">
-				<ul class="breadcrumb">
-					<li><a href="../"><i class="icon-remove-sign"></i></a><span
-						class="divider">\</span></li>
-					<li>Compilation Errors</li>
-				</ul>
+        <div class="span10 offset2">
+            <ul class="breadcrumb">
+                <li><a href="../"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
 
+            
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\PushBuilder.php" id="Slothsoft\Chat\Assets\PushBuilder.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\PushBuilder.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\PushBuilder</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>Argument $context is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>Argument $args is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for method buildExecutableStrategies()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\FetchParameterFilter.php" id="Slothsoft\Chat\Assets\FetchParameterFilter.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\FetchParameterFilter.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\FetchParameterFilter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for method createValueSanitizers()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\SSEServer.php" id="Slothsoft\Chat\SSEServer.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\SSEServer.php
+                            <small style="float: right;padding-right: 10px;">14</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for class \Slothsoft\Chat\SSEServer</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $tableName is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $dbName is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $model is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $type is missing from the Docblock of dispatchEvent</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $data is missing from the Docblock of dispatchEvent</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $time is missing from the Docblock of dispatchEvent</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $ip is missing from the Docblock of dispatchEvent</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for method dispatchEvent()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $lastId is missing from the Docblock of fetchNewEvents</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>No summary for method fetchNewEvents()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for method fetchLastEvent()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\FetchBuilder.php" id="Slothsoft\Chat\Assets\FetchBuilder.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\FetchBuilder.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\FetchBuilder</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $context is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $args is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for method buildExecutableStrategies()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\PushParameterFilter.php" id="Slothsoft\Chat\Assets\PushParameterFilter.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\PushParameterFilter.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\PushParameterFilter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for method createValueSanitizers()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\PullBuilder.php" id="Slothsoft\Chat\Assets\PullBuilder.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\PullBuilder.php
+                            <small style="float: right;padding-right: 10px;">5</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\PullBuilder</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $context is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>Argument $args is missing from the Docblock of buildExecutableStrategies</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>17</td>
+                                        <td>No summary for method buildExecutableStrategies()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Assets\PullParameterFilter.php" id="Slothsoft\Chat\Assets\PullParameterFilter.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Assets\PullParameterFilter.php
+                            <small style="float: right;padding-right: 10px;">3</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for class \Slothsoft\Chat\Assets\PullParameterFilter</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>12</td>
+                                        <td>No summary for method createValueSanitizers()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\Model.php" id="Slothsoft\Chat\Model.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\Model.php
+                            <small style="float: right;padding-right: 10px;">45</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for class \Slothsoft\Chat\Model</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>Argument $dbName is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>Argument $dbTable is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>48</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for method init()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $message is missing from the Docblock of insert</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $time is missing from the Docblock of insert</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $ip is missing from the Docblock of insert</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>No summary for method insert()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>95</td>
+                                        <td>Argument $lastId is missing from the Docblock of getMessageList</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>95</td>
+                                        <td>No summary for method getMessageList()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>112</td>
+                                        <td>Argument $start is missing from the Docblock of wait</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>112</td>
+                                        <td>No summary for method wait()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>137</td>
+                                        <td>No summary for method getFirstTime()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>147</td>
+                                        <td>No summary for method getLastTime()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>157</td>
+                                        <td>Argument $messageList is missing from the Docblock of createRangeDocument</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>157</td>
+                                        <td>No summary for method createRangeDocument()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>164</td>
+                                        <td>Argument $dataDoc is missing from the Docblock of createRangeNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>164</td>
+                                        <td>Argument $messageList is missing from the Docblock of createRangeNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>164</td>
+                                        <td>No summary for method createRangeNode()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>194</td>
+                                        <td>Argument $start is missing from the Docblock of getRangeNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>194</td>
+                                        <td>Argument $end is missing from the Docblock of getRangeNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>194</td>
+                                        <td>Argument $dataDoc is missing from the Docblock of getRangeNode</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>194</td>
+                                        <td>No summary for method getRangeNode()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>212</td>
+                                        <td>Argument $text is missing from the Docblock of parseText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>212</td>
+                                        <td>Argument $doc is missing from the Docblock of parseText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>212</td>
+                                        <td>No summary for method parseText()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>240</td>
+                                        <td>Argument $text is missing from the Docblock of createText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>240</td>
+                                        <td>Argument $doc is missing from the Docblock of createText</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>240</td>
+                                        <td>No summary for method createText()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>259</td>
+                                        <td>Argument $color is missing from the Docblock of calcColor</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>259</td>
+                                        <td>No summary for method calcColor()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>277</td>
+                                        <td>No summary for method install()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>28</td>
+                                        <td>No summary for property $waitStep</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>No summary for property $waitTime</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>No summary for property $sendMax</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>34</td>
+                                        <td>No summary for property $dbmsTable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>36</td>
+                                        <td>No summary for property $dbName</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>38</td>
+                                        <td>No summary for property $dbTable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>40</td>
+                                        <td>No summary for property $dateDisplay</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for property $dateSystem</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>44</td>
+                                        <td>No summary for property $colorCache</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for property $isMinecraft</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>234</td>
+                                        <td>No summary for property $htmlTags</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="Slothsoft\Chat\MinecraftLog.php" id="Slothsoft\Chat\MinecraftLog.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            Slothsoft\Chat\MinecraftLog.php
+                            <small style="float: right;padding-right: 10px;">15</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>18</td>
+                                        <td>No summary for class \Slothsoft\Chat\MinecraftLog</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>Argument $dbName is missing from the Docblock of init</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>Argument $dbTable is missing from the Docblock of init</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>54</td>
+                                        <td>No summary for method init()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>Argument $logFile is missing from the Docblock of watch</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>Argument $logInterval is missing from the Docblock of watch</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for method watch()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>85</td>
+                                        <td>No summary for method reset()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>92</td>
+                                        <td>No summary for method parse()</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for property $messageTypes</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>45</td>
+                                        <td>No summary for property $dbName</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for property $dbTable</td>
+                                    </tr>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>49</td>
+                                        <td>No summary for property $dbmsTable</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="registerModule.php" id="registerModule.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            registerModule.php
+                            <small style="float: right;padding-right: 10px;">1</small>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr>
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </section>
 
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\PushBuilder.php"
-						id="Slothsoft\Chat\Assets\PushBuilder.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\Assets\PushBuilder.php <small
-							style="float: right; padding-right: 10px;">5</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>15</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\PushBuilder</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>17</td>
-									<td>Argument $context is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>17</td>
-									<td>Argument $args is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>17</td>
-									<td>No summary for method buildExecutableStrategies()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\FetchParameterFilter.php"
-						id="Slothsoft\Chat\Assets\FetchParameterFilter.php"></a>
-					<h3>
-						<i class="icon-file"></i>
-						Slothsoft\Chat\Assets\FetchParameterFilter.php <small
-							style="float: right; padding-right: 10px;">3</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>7</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\FetchParameterFilter</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>9</td>
-									<td>No summary for method loadMap()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\SSEServer.php"
-						id="Slothsoft\Chat\SSEServer.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\SSEServer.php <small
-							style="float: right; padding-right: 10px;">14</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>18</td>
-									<td>No summary for class \Slothsoft\Chat\SSEServer</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>23</td>
-									<td>Argument $tableName is missing from the Docblock of
-										__construct</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>23</td>
-									<td>Argument $dbName is missing from the Docblock of
-										__construct</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>23</td>
-									<td>Argument $model is missing from the Docblock of
-										__construct</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>23</td>
-									<td>No summary for method __construct()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>Argument $type is missing from the Docblock of
-										dispatchEvent</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>Argument $data is missing from the Docblock of
-										dispatchEvent</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>Argument $time is missing from the Docblock of
-										dispatchEvent</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>Argument $ip is missing from the Docblock of
-										dispatchEvent</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>No summary for method dispatchEvent()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>35</td>
-									<td>Argument $lastId is missing from the Docblock of
-										fetchNewEvents</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>35</td>
-									<td>No summary for method fetchNewEvents()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>44</td>
-									<td>No summary for method fetchLastEvent()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\FetchBuilder.php"
-						id="Slothsoft\Chat\Assets\FetchBuilder.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\Assets\FetchBuilder.php <small
-							style="float: right; padding-right: 10px;">5</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>17</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\FetchBuilder</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>19</td>
-									<td>Argument $context is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>19</td>
-									<td>Argument $args is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>19</td>
-									<td>No summary for method buildExecutableStrategies()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\PushParameterFilter.php"
-						id="Slothsoft\Chat\Assets\PushParameterFilter.php"></a>
-					<h3>
-						<i class="icon-file"></i>
-						Slothsoft\Chat\Assets\PushParameterFilter.php <small
-							style="float: right; padding-right: 10px;">3</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>7</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\PushParameterFilter</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>9</td>
-									<td>No summary for method loadMap()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\PullBuilder.php"
-						id="Slothsoft\Chat\Assets\PullBuilder.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\Assets\PullBuilder.php <small
-							style="float: right; padding-right: 10px;">5</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>14</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\PullBuilder</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>16</td>
-									<td>Argument $context is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>16</td>
-									<td>Argument $args is missing from the Docblock of
-										buildExecutableStrategies</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>16</td>
-									<td>No summary for method buildExecutableStrategies()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Assets\PullParameterFilter.php"
-						id="Slothsoft\Chat\Assets\PullParameterFilter.php"></a>
-					<h3>
-						<i class="icon-file"></i>
-						Slothsoft\Chat\Assets\PullParameterFilter.php <small
-							style="float: right; padding-right: 10px;">3</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>7</td>
-									<td>No summary for class
-										\Slothsoft\Chat\Assets\PullParameterFilter</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>9</td>
-									<td>No summary for method loadMap()</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\Model.php" id="Slothsoft\Chat\Model.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\Model.php <small
-							style="float: right; padding-right: 10px;">45</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>23</td>
-									<td>No summary for class \Slothsoft\Chat\Model</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>48</td>
-									<td>Argument $dbName is missing from the Docblock of
-										__construct</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>48</td>
-									<td>Argument $dbTable is missing from the Docblock of
-										__construct</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>48</td>
-									<td>No summary for method __construct()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>58</td>
-									<td>No summary for method init()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>72</td>
-									<td>Argument $message is missing from the Docblock of
-										insert</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>72</td>
-									<td>Argument $time is missing from the Docblock of insert</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>72</td>
-									<td>Argument $ip is missing from the Docblock of insert</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>72</td>
-									<td>No summary for method insert()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>95</td>
-									<td>Argument $lastId is missing from the Docblock of
-										getMessageList</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>95</td>
-									<td>No summary for method getMessageList()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>112</td>
-									<td>Argument $start is missing from the Docblock of wait</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>112</td>
-									<td>No summary for method wait()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>137</td>
-									<td>No summary for method getFirstTime()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>147</td>
-									<td>No summary for method getLastTime()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>157</td>
-									<td>Argument $messageList is missing from the Docblock of
-										createRangeDocument</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>157</td>
-									<td>No summary for method createRangeDocument()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>164</td>
-									<td>Argument $dataDoc is missing from the Docblock of
-										createRangeNode</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>164</td>
-									<td>Argument $messageList is missing from the Docblock of
-										createRangeNode</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>164</td>
-									<td>No summary for method createRangeNode()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>194</td>
-									<td>Argument $start is missing from the Docblock of
-										getRangeNode</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>194</td>
-									<td>Argument $end is missing from the Docblock of
-										getRangeNode</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>194</td>
-									<td>Argument $dataDoc is missing from the Docblock of
-										getRangeNode</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>194</td>
-									<td>No summary for method getRangeNode()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>212</td>
-									<td>Argument $text is missing from the Docblock of
-										parseText</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>212</td>
-									<td>Argument $doc is missing from the Docblock of
-										parseText</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>212</td>
-									<td>No summary for method parseText()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>240</td>
-									<td>Argument $text is missing from the Docblock of
-										createText</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>240</td>
-									<td>Argument $doc is missing from the Docblock of
-										createText</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>240</td>
-									<td>No summary for method createText()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>259</td>
-									<td>Argument $color is missing from the Docblock of
-										calcColor</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>259</td>
-									<td>No summary for method calcColor()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>277</td>
-									<td>No summary for method install()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>28</td>
-									<td>No summary for property $waitStep</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>30</td>
-									<td>No summary for property $waitTime</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>32</td>
-									<td>No summary for property $sendMax</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>34</td>
-									<td>No summary for property $dbmsTable</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>36</td>
-									<td>No summary for property $dbName</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>38</td>
-									<td>No summary for property $dbTable</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>40</td>
-									<td>No summary for property $dateDisplay</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>42</td>
-									<td>No summary for property $dateSystem</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>44</td>
-									<td>No summary for property $colorCache</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>46</td>
-									<td>No summary for property $isMinecraft</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>234</td>
-									<td>No summary for property $htmlTags</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="Slothsoft\Chat\MinecraftLog.php"
-						id="Slothsoft\Chat\MinecraftLog.php"></a>
-					<h3>
-						<i class="icon-file"></i> Slothsoft\Chat\MinecraftLog.php <small
-							style="float: right; padding-right: 10px;">15</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>18</td>
-									<td>No summary for class \Slothsoft\Chat\MinecraftLog</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>51</td>
-									<td>No summary for method __construct()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>54</td>
-									<td>Argument $dbName is missing from the Docblock of init</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>54</td>
-									<td>Argument $dbTable is missing from the Docblock of init</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>54</td>
-									<td>No summary for method init()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>62</td>
-									<td>Argument $logFile is missing from the Docblock of
-										watch</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>62</td>
-									<td>Argument $logInterval is missing from the Docblock of
-										watch</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>62</td>
-									<td>No summary for method watch()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>85</td>
-									<td>No summary for method reset()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>92</td>
-									<td>No summary for method parse()</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>27</td>
-									<td>No summary for property $messageTypes</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>45</td>
-									<td>No summary for property $dbName</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>47</td>
-									<td>No summary for property $dbTable</td>
-								</tr>
-								<tr>
-									<td>error</td>
-									<td>49</td>
-									<td>No summary for property $dbmsTable</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-				<div class="package-contents">
-					<a name="registerModule.php" id="registerModule.php"></a>
-					<h3>
-						<i class="icon-file"></i> registerModule.php <small
-							style="float: right; padding-right: 10px;">1</small>
-					</h3>
-					<div>
-						<table class="table markers table-bordered">
-							<thead>
-								<tr>
-									<th>Type</th>
-									<th>Line</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>error</td>
-									<td>0</td>
-									<td>No summary was found for this file</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer class="row-fluid">
-			<section class="span10 offset2">
-				<section class="row-fluid">
-					<section class="span10 offset1">
-						<section class="row-fluid footer-sections">
-							<section class="span4">
-								<h1>
-									<i class="icon-code"></i>
-								</h1>
-								<div>
-									<ul>
-										<li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
-									</ul>
-								</div>
-							</section>
-							<section class="span4">
-								<h1>
-									<i class="icon-bar-chart"></i>
-								</h1>
-								<div>
-									<ul>
-										<li><a href="../graphs/class.html">Class Hierarchy
-												Diagram</a></li>
-									</ul>
-								</div>
-							</section>
-							<section class="span4">
-								<h1>
-									<i class="icon-pushpin"></i>
-								</h1>
-								<div>
-									<ul>
-										<li><a href="../reports/errors.html">Errors</a></li>
-										<li><a href="../reports/markers.html">Markers</a></li>
-									</ul>
-								</div>
-							</section>
-						</section>
-					</section>
-				</section>
-				<section class="row-fluid">
-					<section class="span10 offset1">
-						<hr />
-						Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor
-						</a> and authored on June 23rd, 2018 at 18:10.
-					</section>
-				</section>
-			</section>
-		</footer>
-	</div>
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                            <li><a href="../namespaces/Slothsoft.html">\Slothsoft</a></li>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on August 10th, 2018 at 12:37.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
 
 </body>
 </html>

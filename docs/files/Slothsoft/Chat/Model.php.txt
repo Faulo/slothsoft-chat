@@ -94,7 +94,7 @@ class Model
 
     public function getMessageList($lastId)
     {
-        if (!$this->dbmsTable) {
+        if (! $this->dbmsTable) {
             return [];
         }
         static $messageTypes = null;
