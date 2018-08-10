@@ -13,6 +13,7 @@ use Slothsoft\SSE\Results\ServerResultBuilder;
 
 class PullBuilder implements ExecutableBuilderStrategyInterface
 {
+
     public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
     {
         $tableName = $args->get('name');
@@ -26,19 +27,16 @@ class PullBuilder implements ExecutableBuilderStrategyInterface
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
-        } catch (DatabaseException $e) {
-        }
+        } catch (DatabaseException $e) {}
         
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init($lastId);
-        } catch(DatabaseException $e) {
-        }
+        } catch (DatabaseException $e) {}
         
         $resultBuilder = new ServerResultBuilder($sse);
         return new ExecutableStrategies($resultBuilder);
     }
-
 }
 
 
