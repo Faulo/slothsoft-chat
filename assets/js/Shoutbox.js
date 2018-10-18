@@ -1,5 +1,5 @@
 import { App } from "./ShoutboxComponents/App";
-import * as Module from "/getAsset.php/slothsoft@farah/js/Module";
+import * as Module from "/slothsoft@farah/js/Module";
 
 try {
 	const nodeList = document.querySelectorAll("*[data-chat-id='form']");
