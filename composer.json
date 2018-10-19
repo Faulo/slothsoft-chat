@@ -1,11 +1,11 @@
 {
     "name": "slothsoft/chat",
     "description": "A Farah module that renders a simple shoutbox.",
-    "license": "WTFPL",
+    "license": "GPL",
     "authors": [
         {
             "name": "Daniel Schulz",
-            "email": "info.slothsoft@gmail.com"
+            "email": "info.slothsoft@gmai.com"
         }
     ],
     "type": "library",
@@ -37,5 +37,5 @@
         ]
     },
     "classmap-authoritative": false,
-    "version": "1.0.0"
+    "homepage": "http://farah.slothsoft.net/modules/chat"
 }
