@@ -2,7 +2,7 @@
 import * as DOMHelper from "../../../slothsoft@farah/js/DOMHelper";
 import {Client} from "../../../slothsoft@sse/js/Client";
 
-const sseUri = "/getAsset.php/chat/data/sse";
+const sseUri = "/slothsoft@chat/data/sse";
 
 export class App {
 	constructor(formElement, templateDoc, autoFocus) {
