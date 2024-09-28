@@ -1,7 +1,7 @@
 {
 	"name" : "slothsoft/chat",
 	"description" : "A Farah module that renders a simple shoutbox.",
-	"license" : "WTFPL",
+	"license" : "MIT",
 	"authors" : [{
 			"name" : "Daniel Schulz",
 			"email" : "info.slothsoft@gmail.com"
