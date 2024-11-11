@@ -55,7 +55,7 @@ class MinecraftLog
     {
         $this->dbName = $dbName;
         $this->dbTable = $dbTable;
-        
+
         $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
     }
 
@@ -96,6 +96,7 @@ class MinecraftLog
             foreach ($unparsed as &$line) {
                 $line['type'] = self::$messageTypes['invalid'];
                 $found = false;
+                $match = [];
                 if (preg_match('/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) \[(\w+?)\] (.+)/', $line['raw'], $match)) {
                     $found = true;
                     $hour = $match[4];
@@ -168,7 +169,7 @@ class MinecraftLog
                                 $msg = '@' . $match[3] . ': ' . $match[2];
                                 $type = self::$messageTypes['whisper'];
                             }
-                            
+
                             break;
                         case 'WARNING':
                             // $msg = 'Server: stop';
@@ -191,7 +192,7 @@ class MinecraftLog
                     $this->dbmsTable->delete($id);
                     // $this->dbmsTable->update($line, $id);
                 }
-                
+
                 if (! isset($ret[$line['type']])) {
                     $ret[$line['type']] = 0;
                 }

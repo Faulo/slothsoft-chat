@@ -50,7 +50,7 @@ class Model
         $this->colorCache = [];
         $this->dateDisplay = DateTimeFormatter::FORMAT_DATETIME;
         $this->dateSystem = DateTimeFormatter::FORMAT_ATOM;
-        
+
         $this->dbName = $dbName;
         $this->dbTable = $dbTable;
     }
@@ -178,7 +178,7 @@ class Model
                 'color' => $this->calcColor($color),
                 'client' => $arr['ip']
             ];
-            
+
             $node = $dataDoc->createElement('p');
             foreach ($send as $key => $val) {
                 $node->setAttribute($key, $val);
@@ -212,6 +212,7 @@ class Model
     protected function parseText($text, DOMDocument $doc)
     {
         $retFragment = $doc->createDocumentFragment();
+        $match = [];
         while (preg_match('/(^.*?)(https?:\/\/[^ ]+)(.*$)/i', $text, $match)) {
             if (strlen($match[1])) {
                 $retFragment->appendChild($this->createText($match[1], $doc));

@@ -23,27 +23,27 @@ class PushBuilder implements ExecutableBuilderStrategyInterface
         } else {
             $dbName = 'chat';
         }
-        
+
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
         } catch (DatabaseException $e) {}
-        
+
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init();
         } catch (DatabaseException $e) {}
-        
+
         $messageType = $args->get('type');
-        
+
         $request = Kernel::getCurrentRequest();
         $env = $request->getServerParams();
-        
+
         $messageBody = json_decode($request->getBody()->getContents());
         $messageTime = $env['REQUEST_TIME'];
         $messageIp = $env['REMOTE_ADDR'];
-        $res = $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
-        
+        $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
+
         $resultBuilder = new NullResultBuilder();
         return new ExecutableStrategies($resultBuilder);
     }
