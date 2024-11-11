@@ -243,6 +243,7 @@ class Model
         $retFragment = $doc->createDocumentFragment();
         foreach ($this->htmlTags as $htmlTag) {
             $expr = sprintf('/(^.*?)\<%1$s\>(.+?)\<\/%1$s\>(.*$)/i', $htmlTag);
+            $match = [];
             while (preg_match($expr, $text, $match)) {
                 if (strlen($match[1])) {
                     $retFragment->appendChild($this->createText($match[1], $doc));
