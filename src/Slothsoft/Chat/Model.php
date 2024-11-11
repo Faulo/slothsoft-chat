@@ -20,8 +20,7 @@ use Slothsoft\Chat\MinecraftLog as Log;
 use DOMDocument;
 use Exception;
 
-class Model
-{
+class Model {
 
     const NS_HTML = 'http://www.w3.org/1999/xhtml';
 
@@ -45,8 +44,7 @@ class Model
 
     protected $isMinecraft;
 
-    public function __construct(string $dbName, string $dbTable)
-    {
+    public function __construct(string $dbName, string $dbTable) {
         $this->colorCache = [];
         $this->dateDisplay = DateTimeFormatter::FORMAT_DATETIME;
         $this->dateSystem = DateTimeFormatter::FORMAT_ATOM;
@@ -55,8 +53,7 @@ class Model
         $this->dbTable = $dbTable;
     }
 
-    public function init()
-    {
+    public function init() {
         try {
             $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
             $this->isMinecraft = $this->dbTable === 'minecraft_log';
@@ -69,8 +66,7 @@ class Model
         }
     }
 
-    public function insert($message, $time, $ip)
-    {
+    public function insert($message, $time, $ip) {
         $message = (string) $message;
         $time = (int) $time;
         $ip = (string) $ip;
@@ -92,8 +88,7 @@ class Model
         }
     }
 
-    public function getMessageList($lastId)
-    {
+    public function getMessageList($lastId) {
         if (! $this->dbmsTable) {
             return [];
         }
@@ -109,8 +104,7 @@ class Model
         return $this->dbmsTable->select(true, sprintf('type IN (%s) AND id > %d', implode(',', $messageTypes), $lastId), 'ORDER BY id');
     }
 
-    public function wait($start)
-    {
+    public function wait($start) {
         if ($this->dbmsTable) {
             $messageTypes = [
                 'chat' => Log::$messageTypes['chat'],
@@ -134,8 +128,7 @@ class Model
         return false;
     }
 
-    public function getFirstTime()
-    {
+    public function getFirstTime() {
         $ret = null;
         if ($this->dbmsTable) {
             $res = $this->dbmsTable->select('time', 'time > 0 ORDER BY time ASC LIMIT 1');
@@ -144,8 +137,7 @@ class Model
         return $ret;
     }
 
-    public function getLastTime()
-    {
+    public function getLastTime() {
         $ret = null;
         if ($this->dbmsTable) {
             $res = $this->dbmsTable->select('time', '1 ORDER BY time DESC LIMIT 1');
@@ -154,15 +146,13 @@ class Model
         return $ret;
     }
 
-    public function createRangeDocument(array $messageList)
-    {
+    public function createRangeDocument(array $messageList) {
         $doc = new DOMDocument('1.0', 'UTF-8');
         $doc->appendChild($this->createRangeNode($doc, $messageList));
         return $doc;
     }
 
-    public function createRangeNode(DOMDocument $dataDoc, array $messageList)
-    {
+    public function createRangeNode(DOMDocument $dataDoc, array $messageList) {
         $retNode = $dataDoc->createElement('range');
         $retNode->setAttribute('db-name', $this->dbName);
         $retNode->setAttribute('db-table', $this->dbTable);
@@ -191,8 +181,7 @@ class Model
         return $retNode;
     }
 
-    public function getRangeNode($start, $end, DOMDocument $dataDoc)
-    {
+    public function getRangeNode($start, $end, DOMDocument $dataDoc) {
         $messageList = [];
         if ($this->dbmsTable) {
             $messageTypes = [
@@ -209,8 +198,7 @@ class Model
         return $this->createRangeNode($dataDoc, $messageList);
     }
 
-    protected function parseText($text, DOMDocument $doc)
-    {
+    protected function parseText($text, DOMDocument $doc) {
         $retFragment = $doc->createDocumentFragment();
         $match = [];
         while (preg_match('/(^.*?)(https?:\/\/[^ ]+)(.*$)/i', $text, $match)) {
@@ -238,8 +226,7 @@ class Model
         'b'
     ];
 
-    protected function createText($text, DOMDocument $doc)
-    {
+    protected function createText($text, DOMDocument $doc) {
         $retFragment = $doc->createDocumentFragment();
         foreach ($this->htmlTags as $htmlTag) {
             $expr = sprintf('/(^.*?)\<%1$s\>(.+?)\<\/%1$s\>(.*$)/i', $htmlTag);
@@ -258,8 +245,7 @@ class Model
         return $retFragment;
     }
 
-    protected function calcColor($color)
-    {
+    protected function calcColor($color) {
         if (! isset($this->colorCache[$color])) {
             $this->colorCache[$color] = [
                 255,
@@ -276,8 +262,7 @@ class Model
         return $this->colorCache[$color];
     }
 
-    protected function install()
-    {
+    protected function install() {
         $sqlCols = [
             'id' => 'int(11) NOT NULL AUTO_INCREMENT',
             'time' => 'int(11) NOT NULL',

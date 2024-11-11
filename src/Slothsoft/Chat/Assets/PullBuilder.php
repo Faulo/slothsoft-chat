@@ -11,11 +11,9 @@ use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStra
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 use Slothsoft\SSE\Results\ServerResultBuilder;
 
-class PullBuilder implements ExecutableBuilderStrategyInterface
-{
+class PullBuilder implements ExecutableBuilderStrategyInterface {
 
-    public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
-    {
+    public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies {
         $tableName = $args->get('name');
         if ($tableName === 'minecraft_log') {
             $dbName = 'cms';
@@ -23,17 +21,17 @@ class PullBuilder implements ExecutableBuilderStrategyInterface
             $dbName = 'chat';
         }
         $lastId = (int) $args->get('lastId');
-        
+
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
         } catch (DatabaseException $e) {}
-        
+
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init($lastId);
         } catch (DatabaseException $e) {}
-        
+
         $resultBuilder = new ServerResultBuilder($sse);
         return new ExecutableStrategies($resultBuilder);
     }

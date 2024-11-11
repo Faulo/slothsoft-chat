@@ -6,11 +6,9 @@ use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFil
 use Slothsoft\Core\IO\Sanitizer\IntegerSanitizer;
 use Slothsoft\Core\IO\Sanitizer\FileNameSanitizer;
 
-class FetchParameterFilter extends AbstractMapParameterFilter
-{
+class FetchParameterFilter extends AbstractMapParameterFilter {
 
-    protected function createValueSanitizers(): array
-    {
+    protected function createValueSanitizers(): array {
         return [
             'chat-database' => new FileNameSanitizer('minecraft_log'),
             'chat-duration' => new IntegerSanitizer(1)

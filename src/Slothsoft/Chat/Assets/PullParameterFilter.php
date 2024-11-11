@@ -6,14 +6,12 @@ use Slothsoft\Core\IO\Sanitizer\FileNameSanitizer;
 use Slothsoft\Core\IO\Sanitizer\IntegerSanitizer;
 use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFilter;
 
-class PullParameterFilter extends AbstractMapParameterFilter
-{
+class PullParameterFilter extends AbstractMapParameterFilter {
 
-    protected function createValueSanitizers(): array
-    {
+    protected function createValueSanitizers(): array {
         return [
             'name' => new FileNameSanitizer('minecraft_log'),
-            'lastId' => new IntegerSanitizer(1),
+            'lastId' => new IntegerSanitizer(1)
         ];
     }
 }

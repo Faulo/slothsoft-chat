@@ -15,8 +15,7 @@ use Exception;
  * 2010-12-06 21:37:22 [WARNING] **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
  * 2012-12-18 12:27:25 [SEVERE] Encountered an unexpected exception t
  */
-class MinecraftLog
-{
+class MinecraftLog {
 
     const WATCH_START = '[%s] Starting MinecraftLog watching for file "%s"~ /o/%s';
 
@@ -48,19 +47,16 @@ class MinecraftLog
 
     protected $dbmsTable;
 
-    public function __construct()
-    {}
+    public function __construct() {}
 
-    public function init($dbName, $dbTable)
-    {
+    public function init($dbName, $dbTable) {
         $this->dbName = $dbName;
         $this->dbTable = $dbTable;
 
         $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
     }
 
-    public function watch($logFile, $logInterval)
-    {
+    public function watch($logFile, $logInterval) {
         echo sprintf(self::WATCH_START, date(DateTimeFormatter::FORMAT_DATETIME), $logFile, PHP_EOL);
         try {
             while (sleep($logInterval) === 0) {
@@ -82,15 +78,13 @@ class MinecraftLog
         }
     }
 
-    public function reset()
-    {
+    public function reset() {
         return $this->dbmsTable->update([
             'type' => self::$messageTypes['raw']
         ]);
     }
 
-    public function parse()
-    {
+    public function parse() {
         $ret = [];
         if ($unparsed = $this->dbmsTable->select(true, 'type = ' . self::$messageTypes['raw'])) {
             foreach ($unparsed as &$line) {

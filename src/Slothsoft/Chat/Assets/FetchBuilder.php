@@ -14,11 +14,9 @@ use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\DOMWriterResultBuild
 use DOMDocument;
 use DOMElement;
 
-class FetchBuilder implements ExecutableBuilderStrategyInterface
-{
+class FetchBuilder implements ExecutableBuilderStrategyInterface {
 
-    public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies
-    {
+    public function buildExecutableStrategies(AssetInterface $context, FarahUrlArguments $args): ExecutableStrategies {
         $tableName = $args->get('chat-database');
         if ($tableName === 'minecraft_log') {
             $dbName = 'cms';
@@ -26,15 +24,15 @@ class FetchBuilder implements ExecutableBuilderStrategyInterface
             $dbName = 'chat';
         }
         $duration = Seconds::DAY * (int) $args->get('chat-duration');
-        
+
         $end = time();
         $start = $end - $duration;
-        
+
         $chat = new Model($dbName, $tableName);
         try {
             $chat->init();
         } catch (DatabaseException $e) {}
-        
+
         $writer = function (DOMDocument $targetDoc) use ($chat, $start, $end): DOMElement {
             return $chat->getRangeNode($start, $end, $targetDoc);
         };

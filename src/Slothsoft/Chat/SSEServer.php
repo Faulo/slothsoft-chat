@@ -15,25 +15,21 @@ namespace Slothsoft\Chat;
 
 use Slothsoft\SSE\Server;
 
-class SSEServer extends Server
-{
+class SSEServer extends Server {
 
     private $model;
 
-    public function __construct(string $tableName, string $dbName, Model $model)
-    {
+    public function __construct(string $tableName, string $dbName, Model $model) {
         parent::__construct($tableName, $dbName);
-        
+
         $this->model = $model;
     }
 
-    public function dispatchEvent($type, $data, $time = null, $ip = null)
-    {
+    public function dispatchEvent($type, $data, $time = null, $ip = null) {
         return $this->model->insert($data, $time, $ip);
     }
 
-    public function fetchNewEvents($lastId): iterable
-    {
+    public function fetchNewEvents($lastId): iterable {
         if ($ret = $this->model->getMessageList($lastId)) {
             return [
                 $this->_parseEventList(...$ret)
@@ -43,16 +39,14 @@ class SSEServer extends Server
         }
     }
 
-    public function fetchLastEvent()
-    {
+    public function fetchLastEvent() {
         if ($ret = parent::fetchLastEvent()) {
             $ret = $this->_parseEventList($ret);
         }
         return $ret;
     }
 
-    private function _parseEventList(array ...$eventList): array
-    {
+    private function _parseEventList(array ...$eventList): array {
         $doc = $this->model->createRangeDocument($eventList);
         return [
             'id' => (int) $doc->documentElement->getAttribute('last-id'),
