@@ -1,36 +1,36 @@
 <?xml version="1.0"?>
-<assets xmlns="http://schema.slothsoft.net/farah/module">
-	<resource-directory name="css" type="text/css"/>
-	<resource-directory name="js" type="application/javascript"/>
-	<resource-directory name="xsl" type="application/xslt+xml"/>
+<assets xmlns="http://schema.slothsoft.net/farah/module" version="1.1">
+	<resource-directory name="css" type="text/css" />
+	<resource-directory name="js" type="application/javascript" />
+	<resource-directory name="xsl" type="application/xslt+xml" />
 
-	<resource-directory name="dictionary" type="application/xml"/>
+	<resource-directory name="dictionary" type="application/xml" />
 	<fragment name="data">
-		<custom-asset name="fetch" parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter" executable-builder="Slothsoft\Chat\Assets\FetchBuilder"/>
+		<custom-asset name="fetch" parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter" executable-builder="Slothsoft\Chat\Assets\FetchBuilder" />
 		<custom-asset name="sse">
-			<custom-asset name="pull" parameter-filter="Slothsoft\Chat\Assets\PullParameterFilter" executable-builder="Slothsoft\Chat\Assets\PullBuilder"/>
-			<custom-asset name="push" parameter-filter="Slothsoft\Chat\Assets\PushParameterFilter" executable-builder="Slothsoft\Chat\Assets\PushBuilder"/>
-			<custom-asset name="last" parameter-filter="Slothsoft\Chat\Assets\LastParameterFilter" executable-builder="Slothsoft\Chat\Assets\LastBuilder"/>
+			<custom-asset name="pull" parameter-filter="Slothsoft\Chat\Assets\PullParameterFilter" executable-builder="Slothsoft\Chat\Assets\PullBuilder" />
+			<custom-asset name="push" parameter-filter="Slothsoft\Chat\Assets\PushParameterFilter" executable-builder="Slothsoft\Chat\Assets\PushBuilder" />
+			<custom-asset name="last" parameter-filter="Slothsoft\Chat\Assets\LastParameterFilter" executable-builder="Slothsoft\Chat\Assets\LastBuilder" />
 		</custom-asset>
 	</fragment>
 
 	<fragment name="api">
 		<fragment name="form">
-			<use-template ref="/xsl/form"/>
-			<use-document ref="/data/fetch" name="fetch"/>
-			<link-stylesheet ref="/css/default"/>
-			<link-module ref="/js/Shoutbox"/>
+			<use-template ref="/xsl/form" />
+			<use-document ref="/data/fetch" name="fetch" />
+			<link-stylesheet ref="/css/default" />
+			<link-module ref="/js/Shoutbox" />
 		</fragment>
 
 		<fragment name="shoutbox">
-			<use-template ref="/xsl/shoutbox"/>
-			<use-document ref="/api/form" name="form"/>
+			<use-template ref="/xsl/shoutbox" />
+			<use-document ref="/api/form" name="form" />
 		</fragment>
 
 		<fragment name="archive">
-			<use-template ref="/xsl/archive"/>
-			<use-document ref="/data/archive" name="archive"/>
-			<link-stylesheet ref="/css/default"/>
+			<use-template ref="/xsl/archive" />
+			<use-document ref="/data/archive" name="archive" />
+			<link-stylesheet ref="/css/default" />
 		</fragment>
 	</fragment>
 </assets>
