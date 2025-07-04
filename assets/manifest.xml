@@ -7,11 +7,11 @@
 	<resource-directory name="dictionary" type="application/xml" />
 	<fragment name="data">
 		<custom-asset name="fetch" parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter" executable-builder="Slothsoft\Chat\Assets\FetchBuilder" />
-		<custom-asset name="sse">
+		<fragment name="sse">
 			<custom-asset name="pull" parameter-filter="Slothsoft\Chat\Assets\PullParameterFilter" executable-builder="Slothsoft\Chat\Assets\PullBuilder" />
 			<custom-asset name="push" parameter-filter="Slothsoft\Chat\Assets\PushParameterFilter" executable-builder="Slothsoft\Chat\Assets\PushBuilder" />
-			<custom-asset name="last" parameter-filter="Slothsoft\Chat\Assets\LastParameterFilter" executable-builder="Slothsoft\Chat\Assets\LastBuilder" />
-		</custom-asset>
+		</fragment>
+		<fragment name="archive" />
 	</fragment>
 
 	<fragment name="api">

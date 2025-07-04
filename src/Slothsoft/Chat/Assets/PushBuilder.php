@@ -11,6 +11,7 @@ use Slothsoft\Farah\Module\Asset\AssetInterface;
 use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface;
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\NullResultBuilder;
+use Slothsoft\Core\Configuration\ConfigurationRequiredException;
 
 class PushBuilder implements ExecutableBuilderStrategyInterface {
 
@@ -34,13 +35,16 @@ class PushBuilder implements ExecutableBuilderStrategyInterface {
 
         $messageType = $args->get('type');
 
-        $request = Kernel::getCurrentRequest();
-        $env = $request->getServerParams();
+        try {
+            $request = Kernel::getCurrentRequest();
+            $env = $request->getServerParams();
 
-        $messageBody = json_decode($request->getBody()->getContents());
-        $messageTime = $env['REQUEST_TIME'];
-        $messageIp = $env['REMOTE_ADDR'];
-        $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
+            $messageBody = json_decode($request->getBody()->getContents());
+            $messageTime = $env['REQUEST_TIME'];
+            $messageIp = $env['REMOTE_ADDR'];
+
+            $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
+        } catch (ConfigurationRequiredException $e) {}
 
         $resultBuilder = new NullResultBuilder();
         return new ExecutableStrategies($resultBuilder);
