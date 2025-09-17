@@ -16,13 +16,13 @@ use Exception;
  * 2012-12-18 12:27:25 [SEVERE] Encountered an unexpected exception t
  */
 class MinecraftLog {
-
+    
     const WATCH_START = '[%s] Starting MinecraftLog watching for file "%s"~ /o/%s';
-
+    
     const WATCH_LINE = '[%s] %s%s';
-
+    
     const WATCH_ERROR = '[%s] ERROR! /o\\%s%s';
-
+    
     public static $messageTypes = [
         'ignore' => - 5,
         'invalid' => - 4,
@@ -40,22 +40,22 @@ class MinecraftLog {
         'shutdown' => 8,
         'rcon' => 9
     ];
-
+    
     protected $dbName;
-
+    
     protected $dbTable;
-
+    
     protected $dbmsTable;
-
+    
     public function __construct() {}
-
+    
     public function init($dbName, $dbTable) {
         $this->dbName = $dbName;
         $this->dbTable = $dbTable;
-
+        
         $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
     }
-
+    
     public function watch($logFile, $logInterval) {
         echo sprintf(self::WATCH_START, date(DateTimeFormatter::FORMAT_DATETIME), $logFile, PHP_EOL);
         try {
@@ -77,13 +77,13 @@ class MinecraftLog {
             echo sprintf(self::WATCH_ERROR, date(DateTimeFormatter::FORMAT_DATETIME), PHP_EOL, $e->getMessage());
         }
     }
-
+    
     public function reset() {
         return $this->dbmsTable->update([
             'type' => self::$messageTypes['raw']
         ]);
     }
-
+    
     public function parse() {
         $ret = [];
         if ($unparsed = $this->dbmsTable->select(true, 'type = ' . self::$messageTypes['raw'])) {
@@ -163,7 +163,7 @@ class MinecraftLog {
                                 $msg = '@' . $match[3] . ': ' . $match[2];
                                 $type = self::$messageTypes['whisper'];
                             }
-
+                            
                             break;
                         case 'WARNING':
                             // $msg = 'Server: stop';
@@ -186,7 +186,7 @@ class MinecraftLog {
                     $this->dbmsTable->delete($id);
                     // $this->dbmsTable->update($line, $id);
                 }
-
+                
                 if (! isset($ret[$line['type']])) {
                     $ret[$line['type']] = 0;
                 }

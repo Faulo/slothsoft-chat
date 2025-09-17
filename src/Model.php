@@ -21,38 +21,38 @@ use DOMDocument;
 use Exception;
 
 class Model {
-
+    
     const NS_HTML = 'http://www.w3.org/1999/xhtml';
-
+    
     public $waitStep = 1;
-
+    
     public $waitTime = 300;
-
+    
     public $sendMax = 1024;
-
+    
     protected $dbmsTable;
-
+    
     protected $dbName;
-
+    
     protected $dbTable;
-
+    
     protected $dateDisplay;
-
+    
     protected $dateSystem;
-
+    
     protected $colorCache;
-
+    
     protected $isMinecraft;
-
+    
     public function __construct(string $dbName, string $dbTable) {
         $this->colorCache = [];
         $this->dateDisplay = DateTimeFormatter::FORMAT_DATETIME;
         $this->dateSystem = DateTimeFormatter::FORMAT_ATOM;
-
+        
         $this->dbName = $dbName;
         $this->dbTable = $dbTable;
     }
-
+    
     public function init() {
         try {
             $this->dbmsTable = Manager::getTable($this->dbName, $this->dbTable);
@@ -65,7 +65,7 @@ class Model {
             throw $e;
         }
     }
-
+    
     public function insert($message, $time, $ip) {
         $message = (string) $message;
         $time = (int) $time;
@@ -87,7 +87,7 @@ class Model {
             }
         }
     }
-
+    
     public function getMessageList($lastId) {
         if (! $this->dbmsTable) {
             return [];
@@ -103,7 +103,7 @@ class Model {
         }
         return $this->dbmsTable->select(true, sprintf('type IN (%s) AND id > %d', implode(',', $messageTypes), $lastId), 'ORDER BY id');
     }
-
+    
     public function wait($start) {
         if ($this->dbmsTable) {
             $messageTypes = [
@@ -127,7 +127,7 @@ class Model {
         }
         return false;
     }
-
+    
     public function getFirstTime() {
         $ret = null;
         if ($this->dbmsTable) {
@@ -136,7 +136,7 @@ class Model {
         }
         return $ret;
     }
-
+    
     public function getLastTime() {
         $ret = null;
         if ($this->dbmsTable) {
@@ -145,13 +145,13 @@ class Model {
         }
         return $ret;
     }
-
+    
     public function createRangeDocument(array $messageList) {
         $doc = new DOMDocument('1.0', 'UTF-8');
         $doc->appendChild($this->createRangeNode($doc, $messageList));
         return $doc;
     }
-
+    
     public function createRangeNode(DOMDocument $dataDoc, array $messageList) {
         $retNode = $dataDoc->createElement('range');
         $retNode->setAttribute('db-name', $this->dbName);
@@ -168,7 +168,7 @@ class Model {
                 'color' => $this->calcColor($color),
                 'client' => $arr['ip']
             ];
-
+            
             $node = $dataDoc->createElement('p');
             foreach ($send as $key => $val) {
                 $node->setAttribute($key, $val);
@@ -180,7 +180,7 @@ class Model {
         }
         return $retNode;
     }
-
+    
     public function getRangeNode($start, $end, DOMDocument $dataDoc) {
         $messageList = [];
         if ($this->dbmsTable) {
@@ -197,7 +197,7 @@ class Model {
         }
         return $this->createRangeNode($dataDoc, $messageList);
     }
-
+    
     protected function parseText($text, DOMDocument $doc) {
         $retFragment = $doc->createDocumentFragment();
         $match = [];
@@ -219,13 +219,13 @@ class Model {
         $retFragment->appendChild($this->createText($text, $doc));
         return $retFragment;
     }
-
+    
     protected $htmlTags = [
         'u',
         'i',
         'b'
     ];
-
+    
     protected function createText($text, DOMDocument $doc) {
         $retFragment = $doc->createDocumentFragment();
         foreach ($this->htmlTags as $htmlTag) {
@@ -244,7 +244,7 @@ class Model {
         $retFragment->appendChild($doc->createTextNode($text));
         return $retFragment;
     }
-
+    
     protected function calcColor($color) {
         if (! isset($this->colorCache[$color])) {
             $this->colorCache[$color] = [
@@ -261,7 +261,7 @@ class Model {
         }
         return $this->colorCache[$color];
     }
-
+    
     protected function install() {
         $sqlCols = [
             'id' => 'int(11) NOT NULL AUTO_INCREMENT',

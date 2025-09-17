@@ -7,7 +7,7 @@ use Slothsoft\Core\IO\Sanitizer\IntegerSanitizer;
 use Slothsoft\Farah\Module\Asset\ParameterFilterStrategy\AbstractMapParameterFilter;
 
 class PullParameterFilter extends AbstractMapParameterFilter {
-
+    
     protected function createValueSanitizers(): array {
         return [
             'name' => new FileNameSanitizer('minecraft_log'),
