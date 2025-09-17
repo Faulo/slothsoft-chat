@@ -18,8 +18,8 @@
 		"phpunit/phpunit" : "8.5.*"
 	},
 	"autoload" : {
-		"psr-0" : {
-			"Slothsoft\\Chat\\" : "src/"
+		"psr-4" : {
+			"Slothsoft\\Chat\\" : "src"
 		},
 		"files" : [
 			"src/registerModule.php"
@@ -31,9 +31,9 @@
 		"docs"
 	],
 	"autoload-dev" : {
-		"classmap" : [
-			"tests/"
-		]
+		"psr-4" : {
+			"Slothsoft\\Chat\\" : "tests"
+		}
 	},
 	"homepage" : "http://farah.slothsoft.net/modules/chat"
 }
