@@ -17,7 +17,7 @@ use Slothsoft\SSE\Server;
 
 class SSEServer extends Server {
     
-    private $model;
+    private Model $model;
     
     public function __construct(string $tableName, string $dbName, Model $model) {
         parent::__construct($tableName, $dbName);
@@ -25,7 +25,7 @@ class SSEServer extends Server {
         $this->model = $model;
     }
     
-    public function dispatchEvent($type, $data, $time = null, $ip = null) {
+    public function dispatchEvent($type, $data, $time = null, $ip = null): ?int {
         return $this->model->insert($data, $time, $ip);
     }
     
@@ -39,7 +39,7 @@ class SSEServer extends Server {
         }
     }
     
-    public function fetchLastEvent() {
+    public function fetchLastEvent(): ?array {
         if ($ret = parent::fetchLastEvent()) {
             $ret = $this->_parseEventList($ret);
         }
