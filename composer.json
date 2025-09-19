@@ -22,7 +22,7 @@
 			"Slothsoft\\Chat\\" : "src"
 		},
 		"files" : [
-			"src/registerModule.php"
+			"src/bootstrap.php"
 		]
 	},
 	"keywords" : [
