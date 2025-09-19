@@ -33,4 +33,6 @@
 			<link-stylesheet ref="/css/default" />
 		</fragment>
 	</fragment>
+
+	<use-document name="archive" ref="/api/archive" />
 </assets>
