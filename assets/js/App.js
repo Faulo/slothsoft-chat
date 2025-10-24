@@ -1,11 +1,12 @@
 
-import * as DOMHelper from "../../../slothsoft@farah/js/DOMHelper";
-import { Client } from "../../../slothsoft@sse/js/Client";
+import DOM from "/slothsoft@farah/js/DOM";
+import XSLT from "/slothsoft@farah/js/XSLT";
+import Client from "/slothsoft@sse/js/Client";
 
 const sseUri = "/slothsoft@chat/data/sse";
 
-export class App {
-    constructor(formElement, templateDoc, autoFocus) {
+export default class {
+    constructor(formElement, templateDoc = "farah://slothsoft@chat/xsl/form", autoFocus = false) {
         this.templateDoc = templateDoc;
         this.autoFocus = autoFocus;
         this.formNode = formElement;
@@ -58,17 +59,15 @@ export class App {
                     (eve) => {
                         //console.log("Received message: %o", eve);
                         if (eve.data) {
-                            DOMHelper.parse(eve.data)
-                                .then((dataDocument) => {
-                                    this.lastId = DOMHelper.evaluate("number(/range/@last-id)", dataDocument);
-                                    return DOMHelper.transform(dataDocument, this.templateDoc, this.formNode.ownerDocument);
-                                })
-                                .then((fragment) => {
+                            const dataDocument = DOM.loadXML(eve.data);
+                            this.lastId = DOM.evaluate("number(/range/@last-id)", dataDocument);
+                            XSLT.transformToFragmentAsync(dataDocument, this.templateDoc, this.formNode.ownerDocument)
+                                .then(fragment => {
                                     this.listNode.appendChild(fragment);
                                     this.scrollIntoView();
                                 })
                                 .catch((e) => {
-                                    console.log(e);
+                                    console.error(e);
                                 });
                         }
                     });
