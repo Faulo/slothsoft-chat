@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "paths": {
+      "/slothsoft@chat/*": [
+        "./assets/*"
+      ],
       "/slothsoft@farah/*": [
         "../slothsoft-farah/assets/*"
       ],
