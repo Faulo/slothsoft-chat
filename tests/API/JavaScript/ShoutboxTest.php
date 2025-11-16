@@ -18,7 +18,7 @@ final class ShoutboxTest extends FarahServerTestCase {
         
         $actual = $this->client->executeAsyncScript(<<<EOT
 async function test() {
-    document.body.innerHTML = '<form data-chat-id="form" data-chat-last-id="0" data-chat-database="test"><ul data-chat-id="list" /><input data-chat-id="input" disabled="disabled" /></form>';
+    document.body.innerHTML = '<form data-chat-id="form" data-chat-last-id="0" data-chat-database="test"><ul data-chat-id="list" /><input data-chat-id="input" disabled="disabled" /></form><template xml:base="farah://slothsoft@chat/xsl/form-range" />';
 
     await import("/slothsoft@chat/js/Shoutbox");
 
