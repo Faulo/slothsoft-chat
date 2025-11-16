@@ -4,7 +4,6 @@
 	<resource-directory name="js" type="application/javascript" />
 	<resource-directory name="xsl" type="application/xslt+xml" />
 
-	<resource-directory name="dictionary" type="application/xml" />
 	<fragment name="data">
 		<custom-asset name="fetch" parameter-filter="Slothsoft\Chat\Assets\FetchParameterFilter" executable-builder="Slothsoft\Chat\Assets\FetchBuilder" />
 		<fragment name="sse">
