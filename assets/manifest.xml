@@ -20,6 +20,7 @@
 			<use-document ref="/data/fetch" name="fetch" />
 			<link-stylesheet ref="/css/default" />
 			<link-module ref="/js/Shoutbox" />
+			<link-content ref="/xsl/form-range" />
 		</fragment>
 
 		<fragment name="shoutbox">
