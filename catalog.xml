@@ -2,6 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
   <uri name="farah://slothsoft@chat/xsl/archive" uri="assets/xsl/archive.xsl"/>
   <uri name="farah://slothsoft@chat/xsl/form" uri="assets/xsl/form.xsl"/>
-  <uri name="farah://slothsoft@chat/xsl/full" uri="assets/xsl/full.xsl"/>
+  <uri name="farah://slothsoft@chat/xsl/form-range" uri="assets/xsl/form-range.xsl"/>
   <uri name="farah://slothsoft@chat/xsl/shoutbox" uri="assets/xsl/shoutbox.xsl"/>
 </catalog>
