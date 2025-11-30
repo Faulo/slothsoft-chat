@@ -11,7 +11,7 @@ function bootstrap() {
         const nodeList = document.querySelectorAll("*[data-chat-id = 'form']");
         for (const node of nodeList) {
             if (node.getBoundingClientRect().height) {
-                new Shoutbox(node, template, false);
+                new Shoutbox(node, template.content, false);
             }
         }
     }
