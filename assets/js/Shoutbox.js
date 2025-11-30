@@ -1,4 +1,4 @@
-
+import Bootstrap from "/slothsoft@farah/js/Bootstrap";
 import DOM from "/slothsoft@farah/js/DOM";
 import XSLT from "/slothsoft@farah/js/XSLT";
 import Client from "/slothsoft@sse/js/Client";
@@ -99,4 +99,4 @@ export default class Shoutbox {
     }
 }
 
-bootstrap();
+Bootstrap.run(bootstrap);
