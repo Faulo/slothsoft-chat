@@ -8,10 +8,13 @@ const sseUri = "/slothsoft@chat/data/sse";
 function bootstrap() {
     const template = document.querySelector("template[*|base = 'farah://slothsoft@chat/xsl/form-range']");
     if (template) {
-        const nodeList = document.querySelectorAll("*[data-chat-id = 'form']");
-        for (const node of nodeList) {
-            if (node.getBoundingClientRect().height) {
-                new Shoutbox(node, template.content, false);
+        const stylesheet = template.content.querySelector("stylesheet");
+        if (stylesheet) {
+            const nodeList = document.querySelectorAll("*[data-chat-id = 'form']");
+            for (const node of nodeList) {
+                if (node.getBoundingClientRect().height) {
+                    new Shoutbox(node, stylesheet, false);
+                }
             }
         }
     }
