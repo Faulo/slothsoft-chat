@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-class PushParameterFilterTest extends TestCase {
+final class PushParameterFilterTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(PushParameterFilter::class), "Failed to load class 'Slothsoft\Chat\Assets\PushParameterFilter'!");
