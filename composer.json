@@ -10,13 +10,13 @@
 	"type" : "library",
 	"require" : {
 		"php" : ">=7.4",
-		"slothsoft/core" : "^1.0",
-		"slothsoft/farah" : "^1.26.8",
-		"slothsoft/sse" : "^1.0.12"
+		"slothsoft/core" : "^1.14.5",
+		"slothsoft/farah" : "^1.26.13",
+		"slothsoft/sse" : "^1.0.14"
 	},
 	"require-dev" : {
 		"phpunit/phpunit" : "~9.6.23",
-		"slothsoft/farah-testing" : "^1.1.2"
+		"slothsoft/farah-testing" : "^1.1.7"
 	},
 	"autoload" : {
 		"psr-4" : {
