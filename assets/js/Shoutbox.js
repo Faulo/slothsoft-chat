@@ -72,7 +72,8 @@ export default class Shoutbox {
                 this.sse.addEventListener(
                     "message",
                     (eve) => {
-                        //console.log("Received message: %o", eve);
+                        console.log("Received message: %o", eve);
+
                         if (eve.data) {
                             const dataDocument = DOM.loadXML(eve.data);
                             this.lastId = DOM.evaluate("number(/range/@last-id)", dataDocument);
