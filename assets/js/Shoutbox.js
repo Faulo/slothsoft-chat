@@ -68,29 +68,33 @@ export default class Shoutbox {
         );
         this.sse.addEventListener(
             "start",
-            (eve) => {
-                this.sse.addEventListener(
-                    "message",
-                    (eve) => {
-                        console.log("Received message: %o", eve);
-
-                        if (eve.data) {
-                            const dataDocument = DOM.loadXML(eve.data);
-                            this.lastId = DOM.evaluate("number(/range/@last-id)", dataDocument);
-                            XSLT.transformToFragmentAsync(dataDocument, this.templateDoc, this.formNode.ownerDocument)
-                                .then(fragment => {
-                                    this.listNode.appendChild(fragment);
-                                    this.scrollIntoView();
-                                })
-                                .catch((e) => {
-                                    console.error(e);
-                                });
-                        }
-                    });
+            (_) => {
                 this.inputNode.value = "";
                 this.inputNode.removeAttribute("disabled");
                 if (this.autoFocus) {
                     this.inputNode.focus();
+                }
+            }
+        );
+        this.sse.addEventListener(
+            "message",
+            (eve) => {
+                console.log("Received message: %o", eve);
+
+                if (eve.lastEventId) {
+                    this.lastId = eve.lastEventId;
+                }
+
+                if (eve.data) {
+                    const dataDocument = DOM.loadXML(eve.data);
+                    XSLT.transformToFragmentAsync(dataDocument, this.templateDoc, this.formNode.ownerDocument)
+                        .then(fragment => {
+                            this.listNode.appendChild(fragment);
+                            this.scrollIntoView();
+                        })
+                        .catch((e) => {
+                            console.error(e);
+                        });
                 }
             }
         );
