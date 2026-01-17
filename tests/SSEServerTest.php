@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-class SSEServerTest extends TestCase {
+final class SSEServerTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(SSEServer::class), "Failed to load class 'Slothsoft\Chat\SSEServer'!");

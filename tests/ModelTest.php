@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-class ModelTest extends TestCase {
+final class ModelTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(Model::class), "Failed to load class 'Slothsoft\Chat\Model'!");
