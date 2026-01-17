@@ -11,7 +11,7 @@ use PHPUnit\Framework\TestCase;
  *
  * @todo auto-generated
  */
-final class PushBuilderTest extends TestCase {
+class PushBuilderTest extends TestCase {
     
     public function testClassExists(): void {
         $this->assertTrue(class_exists(PushBuilder::class), "Failed to load class 'Slothsoft\Chat\Assets\PushBuilder'!");
