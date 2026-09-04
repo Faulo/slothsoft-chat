@@ -12,7 +12,7 @@
     "require": {
         "php": ">=8.2",
         "slothsoft/core": "^1.14.27",
-        "slothsoft/farah": "^1.29.1",
+        "slothsoft/farah": "^1.29.2",
         "slothsoft/sse": "^1.11.2"
     },
     "require-dev": {
@@ -37,7 +37,7 @@
             "Slothsoft\\Chat\\": "tests"
         }
     },
-    "homepage": "http://farah.slothsoft.net/modules/chat",
+    "homepage": "https://faulo.github.io/slothsoft-chat/",
     "config": {
         "platform": {
             "php": "8.2"
