@@ -10,6 +10,7 @@ use Slothsoft\Farah\Module\Asset\AssetInterface;
 use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface;
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 use Slothsoft\SSE\Results\ServerResultBuilder;
+use TypeError;
 
 class PullBuilder implements ExecutableBuilderStrategyInterface {
     
@@ -30,10 +31,9 @@ class PullBuilder implements ExecutableBuilderStrategyInterface {
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init($lastId);
-        } catch (DatabaseException $e) {}
+        } catch (DatabaseException|TypeError) {}
         
         $resultBuilder = new ServerResultBuilder($sse);
         return new ExecutableStrategies($resultBuilder);
     }
 }
-

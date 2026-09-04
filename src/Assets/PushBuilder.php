@@ -12,6 +12,7 @@ use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStra
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\NullResultBuilder;
 use Slothsoft\Core\Configuration\ConfigurationRequiredException;
+use TypeError;
 
 class PushBuilder implements ExecutableBuilderStrategyInterface {
     
@@ -31,7 +32,7 @@ class PushBuilder implements ExecutableBuilderStrategyInterface {
         $sse = new SSEServer($tableName, $dbName, $chat);
         try {
             $sse->init();
-        } catch (DatabaseException $e) {}
+        } catch (DatabaseException|TypeError) {}
         
         $messageType = $args->get('type');
         
@@ -50,4 +51,3 @@ class PushBuilder implements ExecutableBuilderStrategyInterface {
         return new ExecutableStrategies($resultBuilder);
     }
 }
-
