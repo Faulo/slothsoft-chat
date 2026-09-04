@@ -101,7 +101,7 @@ class Model {
         if (isset($_REQUEST['chat-all'])) {
             $messageTypes = Log::$messageTypes;
         }
-        return $this->dbmsTable->select(true, sprintf('type IN (%s) AND id > %d', implode(',', $messageTypes), $lastId), 'ORDER BY id');
+        return $this->dbmsTable->select(true, sprintf('type IN (%s) AND id > %d', implode(',', $messageTypes), $lastId), 'ORDER BY id') ?? [];
     }
     
     public function wait($start) {
@@ -192,7 +192,7 @@ class Model {
             if (isset($_REQUEST['chat-all'])) {
                 $messageTypes = Log::$messageTypes;
             }
-            $messageList = $this->dbmsTable->select(true, sprintf('type IN (%s) AND time > %d AND time <= %d ORDER BY time ASC', implode(',', $messageTypes), $start, $end));
+            $messageList = $this->dbmsTable->select(true, sprintf('type IN (%s) AND time > %d AND time <= %d ORDER BY time ASC', implode(',', $messageTypes), $start, $end)) ?? [];
             // $res = array_reverse($res);
         }
         return $this->createRangeNode($dataDoc, $messageList);
