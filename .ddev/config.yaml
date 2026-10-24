@@ -4,14 +4,14 @@ docroot: test-files
 php_version: "8.2"
 webserver_type: nginx-fpm
 xdebug_enabled: false
-additional_hostnames: []
-additional_fqdns: []
+additional_hostnames: [ ]
+additional_fqdns: [ ]
 database:
-    type: mariadb
-    version: "11.8"
+  type: mariadb
+  version: "11.8"
 use_dns_when_possible: true
 composer_version: "2"
-web_environment: []
+web_environment: [ ]
 nodejs_version: "24"
 corepack_enable: false
 disable_upload_dirs_warning: true
@@ -20,12 +20,12 @@ webimage_extra_packages:
     - php${DDEV_PHP_VERSION}-ctype
     - php${DDEV_PHP_VERSION}-curl
     - php${DDEV_PHP_VERSION}-dom
-    - php${DDEV_PHP_VERSION}-fileinfo
     - php${DDEV_PHP_VERSION}-iconv
     - php${DDEV_PHP_VERSION}-mbstring
     - php${DDEV_PHP_VERSION}-phar
     - php${DDEV_PHP_VERSION}-sockets
     - php${DDEV_PHP_VERSION}-tokenizer
+    - php${DDEV_PHP_VERSION}-xml
     - php${DDEV_PHP_VERSION}-xmlwriter
     - php${DDEV_PHP_VERSION}-xsl
     - php${DDEV_PHP_VERSION}-zip
