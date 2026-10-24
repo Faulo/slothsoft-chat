@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Require Farah 1.29.6 so shoutbox events flush immediately without global PHP output-buffer overrides. Web-server and reverse-proxy buffering may still require deployment configuration.
+
 ## [1.1.7] - 2026-09-05
 
 ### Changed
