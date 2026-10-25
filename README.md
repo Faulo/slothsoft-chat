@@ -7,3 +7,14 @@ Chat Module
 [![license badge](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 A Farah module that renders a simple shoutbox.
+
+Minecraft RCON configuration
+----------------------------
+
+Posting messages to `minecraft_log` requires these environment variables in the PHP runtime:
+
+- `MINECRAFT_RCON_ADDRESS`: Minecraft server address.
+- `MINECRAFT_RCON_PORT`: RCON port, for example `25575`.
+- `MINECRAFT_RCON_PASSWORD`: RCON password.
+
+These replace the PHP constants with the same names. If any are unset or empty, posting throws a `RuntimeException` listing all missing variable names before sending or storing the message. Other chat tables do not require RCON configuration.

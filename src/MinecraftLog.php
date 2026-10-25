@@ -1,5 +1,6 @@
 <?php
 declare(strict_types = 1);
+
 namespace Slothsoft\Chat;
 
 use Slothsoft\Core\Calendar\DateTimeFormatter;
@@ -15,6 +16,7 @@ use Exception;
  * 2010-12-06 21:37:22 [WARNING] **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
  * 2012-12-18 12:27:25 [SEVERE] Encountered an unexpected exception t
  */
+
 class MinecraftLog {
     
     const WATCH_START = '[%s] Starting MinecraftLog watching for file "%s"~ /o/%s';
@@ -24,11 +26,11 @@ class MinecraftLog {
     const WATCH_ERROR = '[%s] ERROR! /o\\%s%s';
     
     public static $messageTypes = [
-        'ignore' => - 5,
-        'invalid' => - 4,
-        'unknown' => - 3,
-        'error' => - 2,
-        'warning' => - 1,
+        'ignore' => -5,
+        'invalid' => -4,
+        'unknown' => -3,
+        'error' => -2,
+        'warning' => -1,
         'raw' => 0,
         'system' => 1,
         'chat' => 2,
@@ -47,7 +49,8 @@ class MinecraftLog {
     
     protected $dbmsTable;
     
-    public function __construct() {}
+    public function __construct() {
+    }
     
     public function init($dbName, $dbTable) {
         $this->dbName = $dbName;
@@ -69,7 +72,7 @@ class MinecraftLog {
                             'raw' => utf8_encode($line)
                         ]);
                     }
-                    $this->parse($this->dbmsTable);
+                    $this->parse();
                     clearstatcache();
                 }
             }
@@ -89,32 +92,19 @@ class MinecraftLog {
         if ($unparsed = $this->dbmsTable->select(true, 'type = ' . self::$messageTypes['raw'])) {
             foreach ($unparsed as &$line) {
                 $line['type'] = self::$messageTypes['invalid'];
-                $found = false;
+                $time = null;
                 $match = [];
                 if (preg_match('/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2}) \[(\w+?)\] (.+)/', $line['raw'], $match)) {
-                    $found = true;
-                    $hour = $match[4];
-                    $minute = $match[5];
-                    $second = $match[6];
-                    $month = $match[2];
-                    $day = $match[3];
-                    $year = $match[1];
+                    $time = mktime((int) $match[4], (int) $match[5], (int) $match[6], (int) $match[2], (int) $match[3], (int) $match[1]);
                     $msgType = $match[7];
                     $msgBody = $match[8];
                 }
                 if (preg_match('/\[(\d{2}):(\d{2}):(\d{2})\] \[[^\\/]+\\/(\w+?)\]\: (.+)/', $line['raw'], $match)) {
-                    $found = true;
-                    $hour = $match[1];
-                    $minute = $match[2];
-                    $second = $match[3];
-                    $month = date('n');
-                    $day = date('j');
-                    $year = date('Y');
+                    $time = mktime((int) $match[1], (int) $match[2], (int) $match[3], (int) date('n'), (int) date('j'), (int) date('Y'));
                     $msgType = $match[4];
                     $msgBody = $match[5];
                 }
-                if ($found) {
-                    $time = mktime($hour, $minute, $second, $month, $day, $year);
+                if ($time !== null) {
                     $msg = $msgBody;
                     $player = null;
                     $type = self::$messageTypes['unknown'];
@@ -151,12 +141,8 @@ class MinecraftLog {
                                 $type = self::$messageTypes['login'];
                             } elseif (preg_match('/([^ \[]+).*(\d+\.\d+\.\d+\.\d+)?.*lost connection: (.+)/', $msg, $match)) {
                                 $player = $match[1];
-                                if (isset($match[3])) {
-                                    $line['ip'] = $match[2];
-                                    $msg = $match[3];
-                                } else {
-                                    $msg = $match[2];
-                                }
+                                $line['ip'] = $match[2];
+                                $msg = $match[3];
                                 $type = self::$messageTypes['logout'];
                             } elseif (preg_match('/(.+?) whispers (.+) to (.+)/', $msg, $match)) {
                                 $player = $match[1];
@@ -190,7 +176,7 @@ class MinecraftLog {
                 if (! isset($ret[$line['type']])) {
                     $ret[$line['type']] = 0;
                 }
-                $ret[$line['type']] ++;
+                $ret[$line['type']]++;
             }
             unset($line);
         }
@@ -402,4 +388,3 @@ class MinecraftLog {
      * //
      */
 }
-

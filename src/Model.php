@@ -11,6 +11,7 @@ declare(strict_types = 1);
  * initial release
  * *********************************************************************
  */
+
 namespace Slothsoft\Chat;
 
 use Slothsoft\Core\RCon;
@@ -19,6 +20,7 @@ use Slothsoft\Core\DBMS\Manager;
 use Slothsoft\Chat\MinecraftLog as Log;
 use DOMDocument;
 use Exception;
+use RuntimeException;
 
 class Model {
     
@@ -73,10 +75,23 @@ class Model {
         if ($this->dbmsTable) {
             if (strlen($message) and $time and strlen($ip)) {
                 if ($this->isMinecraft) {
+                    $rconConfig = [];
+                    $missing = [];
+                    foreach (['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT', 'MINECRAFT_RCON_PASSWORD'] as $name) {
+                        $value = getenv($name);
+                        if ($value === false || $value === '') {
+                            $missing[] = $name;
+                        }
+                        $rconConfig[$name] = $value;
+                    }
+                    if ($missing) {
+                        throw new RuntimeException('Missing Minecraft RCON environment variables: ' . implode(', ', $missing));
+                    }
                     try {
-                        $rcon = new RCon(MINECRAFT_RCON_ADDRESS, MINECRAFT_RCON_PORT, MINECRAFT_RCON_PASSWORD);
+                        $rcon = new RCon($rconConfig['MINECRAFT_RCON_ADDRESS'], (int) $rconConfig['MINECRAFT_RCON_PORT'], $rconConfig['MINECRAFT_RCON_PASSWORD']);
                         $rcon->execute('say ' . $message);
-                    } catch (Exception $e) {}
+                    } catch (Exception $e) {
+                    }
                 }
                 $this->dbmsTable->insert(array(
                     'time' => $time,

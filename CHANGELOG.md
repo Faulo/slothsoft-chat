@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Read Minecraft RCON settings from `MINECRAFT_RCON_ADDRESS`, `MINECRAFT_RCON_PORT`, and `MINECRAFT_RCON_PASSWORD` environment variables instead of PHP constants. Posting to Minecraft now fails with all missing variable names when any setting is unset or empty.
+
 ### Fixed
 
+- Parse Minecraft log timestamps with integer date components under strict typing.
 - Require Farah 1.29.6 so shoutbox events flush immediately without global PHP output-buffer overrides. Web-server and reverse-proxy buffering may still require deployment configuration.
 
 ## [1.1.7] - 2026-09-05
