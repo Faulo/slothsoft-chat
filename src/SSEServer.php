@@ -11,6 +11,7 @@ declare(strict_types = 1);
  * public function __construct($serverName)
  * *********************************************************************
  */
+
 namespace Slothsoft\Chat;
 
 use Slothsoft\SSE\Server;
@@ -25,31 +26,31 @@ class SSEServer extends Server {
         $this->model = $model;
     }
     
-    public function dispatchEvent($type, $data, $time = null, $ip = null): ?int {
-        return $this->model->insert($data, $time, $ip);
+    public function dispatchEvent(string $type, string $data, ?int $time = null, ?string $ip = null): ?int {
+        $this->model->insert($data, $time, $ip);
+        return null;
     }
     
-    public function fetchNewEvents($lastId): iterable {
-        if ($ret = $this->model->getMessageList($lastId)) {
-            return [
-                $this->_parseEventList(...$ret)
-            ];
-        } else {
-            return [];
-        }
+    /** @return list<array{id: int, type: 'message', data: string|false}> */
+    public function fetchNewEvents(int $lastId): array {
+        $messages = $this->model->getMessageList($lastId);
+        return $messages === [] ? [] : [$this->parseEventList($messages)];
     }
     
+    /** @return array{id: int, type: 'message', data: string|false}|null */
     public function fetchLastEvent(): ?array {
-        if ($ret = parent::fetchLastEvent()) {
-            $ret = $this->_parseEventList($ret);
-        }
-        return $ret;
+        $message = parent::fetchLastEvent();
+        return $message === null ? null : $this->parseEventList([$message]);
     }
     
-    private function _parseEventList(array ...$eventList): array {
+    /**
+     * @param array<array<array-key, mixed>> $eventList
+     * @return array{id: int, type: 'message', data: string|false}
+     */
+    private function parseEventList(array $eventList): array {
         $doc = $this->model->createRangeDocument($eventList);
         return [
-            'id' => (int) $doc->documentElement->getAttribute('last-id'),
+            'id' => (int) $doc->documentElement?->getAttribute('last-id'),
             'type' => 'message',
             'data' => $doc->saveXML()
         ];

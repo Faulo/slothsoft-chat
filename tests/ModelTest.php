@@ -5,6 +5,9 @@ namespace Slothsoft\Chat;
 
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
+use Slothsoft\Core\DBMS\Client;
+use Slothsoft\Core\DBMS\Database;
+use Slothsoft\Core\DBMS\Table;
 
 /**
  * ModelTest
@@ -20,15 +23,10 @@ final class ModelTest extends TestCase {
     
     public function testEmptyDatabaseResultCreatesEmptyRange(): void {
         $model = new class('chat', 'messages') extends Model {
-            public function useDatabaseTable(object $table): void {
-                $this->dbmsTable = $table;
-            }
-        };
-        $model->useDatabaseTable(new class() {
-            public function select(): null {
+            protected function selectMessageRows(string $query, string $suffix): null {
                 return null;
             }
-        });
+        };
         
         $document = new \DOMDocument();
         $range = $model->getRangeNode(0, time(), $document);
@@ -38,7 +36,8 @@ final class ModelTest extends TestCase {
         $this->assertSame('messages', $range->getAttribute('db-table'));
         $this->assertFalse($range->hasChildNodes());
     }
-
+    
+    /** @return iterable<string, array{array<string, string>, list<string>}> */
     public function missingRconConfigurationProvider(): iterable {
         yield 'all unset' => [[], ['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT', 'MINECRAFT_RCON_PASSWORD']];
         yield 'address unset' => [['MINECRAFT_RCON_PORT' => '25575', 'MINECRAFT_RCON_PASSWORD' => 'secret'], ['MINECRAFT_RCON_ADDRESS']];
@@ -47,27 +46,33 @@ final class ModelTest extends TestCase {
         yield 'empty settings' => [['MINECRAFT_RCON_ADDRESS' => '', 'MINECRAFT_RCON_PORT' => '', 'MINECRAFT_RCON_PASSWORD' => ''], ['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT', 'MINECRAFT_RCON_PASSWORD']];
         yield 'zero password is set' => [['MINECRAFT_RCON_PASSWORD' => '0'], ['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT']];
     }
-
+    
     /**
      * @dataProvider missingRconConfigurationProvider
      * @runInSeparateProcess
+     * @param array<string, string> $environment
+     * @param list<string> $missing
      */
     public function testMinecraftInsertListsAllMissingRconSettings(array $environment, array $missing): void {
         foreach (['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT', 'MINECRAFT_RCON_PASSWORD'] as $name) {
             putenv(array_key_exists($name, $environment) ? $name . '=' . $environment[$name] : $name);
         }
-        $table = new class() {
-            public function insert(array $message): void {
+        $model = new class('chat', 'minecraft_log') extends Model {
+            public function init(): void {
+                $this->dbmsTable = new Table(new Database(new Client(), $this->dbName), $this->dbTable);
+            }
+            
+            protected function storeMessage(array $message): never {
                 throw new \LogicException('No message should be stored with missing RCON configuration.');
             }
         };
-        $model = $this->createModelForInsert($table, true);
-
+        $model->init();
+        
         $this->expectException(RuntimeException::class);
         $this->expectExceptionMessage('Missing Minecraft RCON environment variables: ' . implode(', ', $missing));
         $model->insert('Hello', 123, '127.0.0.1');
     }
-
+    
     /**
      * @runInSeparateProcess
      */
@@ -75,32 +80,27 @@ final class ModelTest extends TestCase {
         foreach (['MINECRAFT_RCON_ADDRESS', 'MINECRAFT_RCON_PORT', 'MINECRAFT_RCON_PASSWORD'] as $name) {
             putenv($name);
         }
-        $table = new class() {
+        $model = new class('chat', 'messages') extends Model {
+            /** @var list<array{time: int, message: string, ip: string, type: int}> */
             public array $messages = [];
-
-            public function insert(array $message): void {
+            
+            public function init(): void {
+                $this->dbmsTable = new Table(new Database(new Client(), $this->dbName), $this->dbTable);
+            }
+            
+            protected function storeMessage(array $message): void {
                 $this->messages[] = $message;
             }
         };
-        $model = $this->createModelForInsert($table, false);
-
+        $model->init();
+        
         $model->insert('Hello', 123, '127.0.0.1');
-
+        
         $this->assertSame([[
             'time' => 123,
             'message' => 'Hello',
             'ip' => '127.0.0.1',
             'type' => MinecraftLog::$messageTypes['rcon']
-        ]], $table->messages);
-    }
-
-    private function createModelForInsert(object $table, bool $isMinecraft): Model {
-        return new class($table, $isMinecraft) extends Model {
-            public function __construct(object $table, bool $isMinecraft) {
-                parent::__construct('chat', $isMinecraft ? 'minecraft_log' : 'messages');
-                $this->dbmsTable = $table;
-                $this->isMinecraft = $isMinecraft;
-            }
-        };
+        ]], $model->messages);
     }
 }
