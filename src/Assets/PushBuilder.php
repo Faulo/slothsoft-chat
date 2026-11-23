@@ -4,7 +4,6 @@ declare(strict_types = 1);
 namespace Slothsoft\Chat\Assets;
 
 use Slothsoft\Chat\Model;
-use Slothsoft\Chat\SSEServer;
 use Slothsoft\Core\Configuration\ConfigurationRequiredException;
 use Slothsoft\Core\DBMS\DatabaseException;
 use Slothsoft\Farah\FarahUrl\FarahUrlArguments;
@@ -13,7 +12,6 @@ use Slothsoft\Farah\Module\Asset\AssetInterface;
 use Slothsoft\Farah\Module\Asset\ExecutableBuilderStrategy\ExecutableBuilderStrategyInterface;
 use Slothsoft\Farah\Module\Executable\ExecutableStrategies;
 use Slothsoft\Farah\Module\Executable\ResultBuilderStrategy\NullResultBuilder;
-use TypeError;
 
 class PushBuilder implements ExecutableBuilderStrategyInterface {
     
@@ -31,14 +29,6 @@ class PushBuilder implements ExecutableBuilderStrategyInterface {
         } catch (DatabaseException $e) {
         }
         
-        $sse = new SSEServer($tableName, $dbName, $chat);
-        try {
-            $sse->init();
-        } catch (DatabaseException|TypeError) {
-        }
-        
-        $messageType = $args->get('type');
-        
         try {
             $request = Kernel::getCurrentRequest();
             $env = $request->getServerParams();
@@ -47,7 +37,7 @@ class PushBuilder implements ExecutableBuilderStrategyInterface {
             $messageTime = (int) ($env['REQUEST_TIME'] ?? 0);
             $messageIp = (string) ($env['REMOTE_ADDR'] ?? '');
             
-            $sse->dispatchEvent($messageType, $messageBody, $messageTime, $messageIp);
+            $chat->insert($messageBody, $messageTime, $messageIp);
         } catch (ConfigurationRequiredException $e) {
         }
         

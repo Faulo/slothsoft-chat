@@ -26,11 +26,6 @@ class SSEServer extends Server {
         $this->model = $model;
     }
     
-    public function dispatchEvent(string $type, string $data, ?int $time = null, ?string $ip = null): ?int {
-        $this->model->insert($data, $time, $ip);
-        return null;
-    }
-    
     /** @return list<array{id: int, type: 'message', data: string|false}> */
     public function fetchNewEvents(int $lastId): array {
         $messages = $this->model->getMessageList($lastId);
